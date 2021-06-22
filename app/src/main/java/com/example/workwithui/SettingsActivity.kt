@@ -17,6 +17,8 @@ class SettingsActivity : AppCompatActivity() {
         showList()
         listViewAdapter = ExpandableListAdapter(this, header, body)
         expendableListView.setAdapter(listViewAdapter)
+
+        //TODO NOT WORKING - use fragment (for bottomsheet use invisible from program code)
         back.setOnClickListener {
             val intent = Intent(applicationContext, FirstFragment::class.java)
             startActivity(intent)
@@ -41,5 +43,6 @@ class SettingsActivity : AppCompatActivity() {
         body1.add("PDF20201223.pdf")
         body1.add("PDF20201223.pdf")
         body[header[0]] = body1
+        //TODO why this apk crash on this features! check it and refactor
     }
 }

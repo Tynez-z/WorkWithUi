@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <!-- TODO use pare attributes and style!!!-->
     <TextView
         android:id="@+id/tv_title"
         android:layout_width="match_parent"
@@ -25,6 +26,7 @@
         android:layout_marginTop="20dp"
         android:src="@drawable/ic_add" />
 
+    <!-- TODO use shape -->
     <View
         android:layout_width="match_parent"
         android:layout_height="6dp"

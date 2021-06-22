@@ -23,7 +23,6 @@ class ExpandableListAdapter(
 
     override fun getGroup(groupPosition: Int): String {
         return header[groupPosition]
-
     }
 
     override fun getChild(groupPosition: Int, childPosition: Int): Any {
@@ -42,6 +41,7 @@ class ExpandableListAdapter(
         return false
     }
 
+    //TODO fix work with renaming
     override fun getGroupView(
             groupPosition: Int,
             isExpanded: Boolean,
@@ -58,11 +58,12 @@ class ExpandableListAdapter(
         }
 
         val headerTv = convertView!!.tv_title
-        headerTv.setText(headerTitle)
+        headerTv.text = headerTitle
 
         return convertView
     }
 
+    //TODO fix work with renaming
     override fun getChildView(
             groupPosition: Int,
             childPosition: Int,

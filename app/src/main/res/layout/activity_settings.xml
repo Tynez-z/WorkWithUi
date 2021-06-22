@@ -40,6 +40,7 @@
                 android:src="@drawable/ic_cancel" />
         </FrameLayout>
 
+        <!-- TODO not use custom libraries on commercial projects! -->
         <ir.neo.stepbarview.StepBarView
             android:id="@+id/my_stepBarView"
             android:layout_width="wrap_content"
