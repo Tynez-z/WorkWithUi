@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/ic_home"
+        android:title="@string/home" />
+
+    <item
+        android:id="@+id/calendar"
+        android:icon="@drawable/ic_calendarforbottom"
+        android:title="@string/calendar" />
+
+    <item
+        android:id="@+id/education"
+        android:icon="@drawable/ic_book"
+        android:title="@string/education" />
+
+    <item
+        android:id="@+id/BAAN_info"
+        android:icon="@drawable/ic_information"
+        android:title="@string/baan_info" />
+
+    <item
+        android:id="@+id/firstFragment"
+        android:icon="@drawable/ic_user"
+        android:title="@string/profile" />
+</menu>

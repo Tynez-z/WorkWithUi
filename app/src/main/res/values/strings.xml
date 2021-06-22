@@ -1,3 +1,33 @@
 <resources>
     <string name="app_name">WorkWithUi</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="documents_folder">Documents &amp; Notes</string>
+    <string name="home">Home</string>
+    <string name="calendar">Calendar</string>
+    <string name="education">Education</string>
+    <string name="baan_info">BAAN info</string>
+    <string name="profile">Profile</string>
+    <string name="text_button_next">Next</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="please_upload">Please upload the file(s) in the section below:</string>
+    <string name="do_you_have_a_copy">Do you have a copy of your previous medical records?
+        <font color='red'>*
+        </font>
+    </string>
+    <string name="membership_id">Membership ID: 01-99-033</string>
+    <string name="number_mobile">+98 999 999 999</string>
+    <string name="name_user_profile">Mrs Jane Doe</string>
+    <string name="medical_records">Medical Records</string>
+    <string name="example_for_group">EXAMPLE</string>
+    <string name="personal_details">Personal details</string>
+    <string name="test_results">Test Results</string>
+    <string name="my_health_records">My Health Records</string>
+    <string name="my_appointments">My Appointments</string>
+    <string name="my_medications">My Medications</string>
+    <string name="my_medical_team">My Medical Team</string>
+    <string name="messages">Messages</string>
+    <string name="billing">Billing</string>
+    <string name="example_for_child">EXAMPLE</string>
 </resources>

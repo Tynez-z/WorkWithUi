@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:id="@+id/relative_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_color"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="@string/medical_records"
+                android:textColor="@color/text_title"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="25dp"
+                android:src="@drawable/ic_left_arrow" />
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginStart="360dp"
+                android:layout_marginTop="26dp"
+                android:src="@drawable/ic_cancel" />
+        </FrameLayout>
+
+        <ir.neo.stepbarview.StepBarView
+            android:id="@+id/my_stepBarView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="30dp"
+            android:background="@color/background_color"
+            android:paddingLeft="24dp"
+            android:paddingTop="8dp"
+            android:paddingRight="24dp"
+            android:paddingBottom="8dp"
+            app:sbv_is_fixed_steps_line_width="true"
+            app:sbv_max_count="7"
+            app:sbv_show_step_stroke="true"
+            app:sbv_steps_line_reached_colors="@color/line_progress"
+            app:sbv_steps_line_unreached_colors="@color/unreached"
+            app:sbv_steps_line_width="10dp"
+            app:sbv_steps_reached_colors="@color/white"
+            app:sbv_steps_size="28dp"
+            app:sbv_steps_stroke_current_color="@color/current"
+            app:sbv_steps_stroke_reached_color="@color/line_progress"
+            app:sbv_steps_stroke_size="2dp"
+            app:sbv_steps_stroke_unreached_color="@color/unreached"
+            app:sbv_steps_text_color="@color/number_none_selected"
+            app:sbv_steps_unreached_colors="@color/white" />
+
+        <TextView
+            android:id="@+id/question"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="50dp"
+            android:text="@string/do_you_have_a_copy"
+            android:textColor="@color/text_question"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <RadioGroup
+            android:id="@+id/radio_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rb_no"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:background="@drawable/radio_selector"
+                android:button="@android:color/transparent"
+                android:padding="5dp"
+                android:text="@string/no"
+                android:textAlignment="center"
+                android:textColor="@drawable/design_text"
+                android:textSize="@dimen/text_size_button"
+                android:textStyle="bold" />
+
+            <RadioButton
+                android:id="@+id/rb_yes"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/radio_selector"
+                android:button="@android:color/transparent"
+                android:padding="5dp"
+                android:text="@string/yes"
+                android:textAlignment="center"
+                android:textColor="@drawable/design_text"
+                android:textSize="@dimen/text_size_button"
+                android:textStyle="bold" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/upload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="50dp"
+            android:text="@string/please_upload"
+            android:textColor="@color/text_upload"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <ExpandableListView
+            android:id="@+id/expendableListView"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:layout_weight="1"
+            android:overScrollMode="never"
+            android:fadingEdge="none"
+            android:background="@drawable/design_shape_list"
+            android:childDivider="@color/white"
+            android:divider="@color/background_color"
+            android:dividerHeight="3dp"
+            android:scrollbars="none" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_next"
+                android:layout_width="match_parent"
+                android:layout_height="43dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="50dp"
+                android:layout_marginBottom="25dp"
+                android:background="@drawable/design_button_next"
+                android:text="@string/text_button_next"
+                android:textAllCaps="false"
+                style="?android:attr/borderlessButtonStyle"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_button"
+                android:textStyle="bold" />
+
+    </LinearLayout>
+</layout>
