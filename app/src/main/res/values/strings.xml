@@ -12,7 +12,7 @@
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="please_upload">Please upload the file(s) in the section below:</string>
-    <string name="do_you_have_a_copy">Do you have a copy of your previous medical records?
+    <string name="do_you_have_a_copy">Do you have a copy of your previous medical\nrecords?
         <font color='red'>*
         </font>
     </string>
@@ -30,4 +30,19 @@
     <string name="messages">Messages</string>
     <string name="billing">Billing</string>
     <string name="example_for_child">EXAMPLE</string>
+    <string name="icon_settings">iconSettings</string>
+    <string name="icon_profile">iconProfile</string>
+    <string name="icon_camera">iconCamera</string>
+    <string name="icon_health_records">iconHealthRecords</string>
+    <string name="icon_calendar">iconCalendar</string>
+    <string name="icon_medical_team">iconMedicalTeam</string>
+    <string name="icon_message">iconMessage</string>
+    <string name="icon_medications">iconMedications</string>
+    <string name="icon_test_result">iconTestResult</string>
+    <string name="icon_billing">iconBilling</string>
+    <string name="icon_go_to_back">iconGoToBack</string>
+    <string name="icon_cancel">iconCancel</string>
+    <string name="icon_file">iconFile</string>
+    <string name="icon_trash">iconTrash</string>
+    <string name="icon_add">iconAdd</string>
 </resources>

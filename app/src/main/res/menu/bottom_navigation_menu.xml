@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/home"
+        android:id="@+id/homeFragment"
         android:icon="@drawable/ic_home"
         android:title="@string/home" />
 
     <item
-        android:id="@+id/calendar"
+        android:id="@+id/calendarFragment"
         android:icon="@drawable/ic_calendarforbottom"
         android:title="@string/calendar" />
 
     <item
-        android:id="@+id/education"
+        android:id="@+id/educationFragment"
         android:icon="@drawable/ic_book"
         android:title="@string/education" />
 
     <item
-        android:id="@+id/BAAN_info"
+        android:id="@+id/baanFragment"
         android:icon="@drawable/ic_information"
         android:title="@string/baan_info" />
 

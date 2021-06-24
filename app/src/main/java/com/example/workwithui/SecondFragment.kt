@@ -1,27 +1,34 @@
 package com.example.workwithui
 
-import android.content.Intent
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_settings.*
+import android.view.View
+import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import com.example.workwithui.databinding.FragmentSecondBinding
+import com.google.android.material.navigation.NavigationView
+import kotlinx.android.synthetic.main.fragment_first.*
+import kotlinx.android.synthetic.main.fragment_second.*
 
-class SettingsActivity : AppCompatActivity() {
+class SecondFragment : Fragment(R.layout.fragment_second) {
 
     private lateinit var listViewAdapter: ExpandableListAdapter
     private lateinit var header: List<String>
     private lateinit var body: HashMap<String, List<String>>
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_settings)
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        stepBar.BarBuilder()
+            .build()
+            .init()
+
         showList()
-        listViewAdapter = ExpandableListAdapter(this, header, body)
+
+        listViewAdapter = ExpandableListAdapter(requireContext(), header, body)
         expendableListView.setAdapter(listViewAdapter)
 
-        //TODO NOT WORKING - use fragment (for bottomsheet use invisible from program code)
         back.setOnClickListener {
-            val intent = Intent(applicationContext, FirstFragment::class.java)
-            startActivity(intent)
+            findNavController().navigate(R.id.action_secondFragment_to_firstFragment)
         }
     }
 
@@ -45,4 +52,6 @@ class SettingsActivity : AppCompatActivity() {
         body[header[0]] = body1
         //TODO why this apk crash on this features! check it and refactor
     }
+
+
 }

@@ -6,4 +6,93 @@
         <item name="android:textStyle">normal</item>
         <item name="android:textColor">@color/text_grey</item>
     </style>
+
+    <style name="boldStyle">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="colorStyle">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/teal_700</item>
+    </style>
+
+    <style name="textImage">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/text_grey</item>
+    </style>
+
+    <style name="boldStyleTitle">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/text_question</item>
+    </style>
+
+    <style name="styleRadioButton">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="styleButtonNext">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="styleNameTitle">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/text_title</item>
+    </style>
+
+    <style name="styleTextUpload">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/text_upload</item>
+    </style>
+
+    <style name="textChildList">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/text_upload</item>
+    </style>
+
+    <style name="textGroupList">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/text_upload</item>
+    </style>
+
+    <style name="styleCardViewLeft">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_column">0</item>
+        <item name="android:layout_gravity">fill</item>
+        <item name="android:layout_marginStart">@dimen/left_start_card</item>
+        <item name="android:layout_marginEnd">@dimen/left_end_card</item>
+        <item name="android:layout_marginBottom">@dimen/left_bottom_card</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="cardCornerRadius">@dimen/radius_card</item>
+        <item name="cardElevation">@dimen/size_0dp</item>
+    </style>
+
+    <style name="styleCardViewRight">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_column">1</item>
+        <item name="android:layout_gravity">fill</item>
+        <item name="android:layout_marginStart">@dimen/right_start_card</item>
+        <item name="android:layout_marginEnd">@dimen/right_end_card</item>
+        <item name="android:layout_marginBottom">@dimen/right_bottom_card</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="cardCornerRadius">@dimen/radius_card</item>
+        <item name="cardElevation">@dimen/size_0dp</item>
+    </style>
+
+
 </resources>

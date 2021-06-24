@@ -41,7 +41,6 @@ class ExpandableListAdapter(
         return false
     }
 
-    //TODO fix work with renaming
     override fun getGroupView(
             groupPosition: Int,
             isExpanded: Boolean,
@@ -49,21 +48,21 @@ class ExpandableListAdapter(
             parent: ViewGroup?
     ): View {
 
-        var convertView = convertView
+        var mconvertView = convertView
         val headerTitle = getGroup(groupPosition) as String
 
-        if (convertView == null) {
-            val inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-            convertView = inflater.inflate(R.layout.layout_group, null)
+        if (mconvertView == null) {
+            val inflater =
+                context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+            mconvertView = inflater.inflate(R.layout.layout_group, null)
         }
 
-        val headerTv = convertView!!.tv_title
+        val headerTv = mconvertView!!.tv_title
         headerTv.text = headerTitle
 
-        return convertView
+        return mconvertView
     }
 
-    //TODO fix work with renaming
     override fun getChildView(
             groupPosition: Int,
             childPosition: Int,
@@ -71,17 +70,18 @@ class ExpandableListAdapter(
             convertView: View?,
             parent: ViewGroup?
     ): View {
-        var convertView = convertView
+        var mconvertView = convertView
         val bodyTitle = getChild(groupPosition, childPosition) as String
 
-        if (convertView == null) {
-            val inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-            convertView = inflater.inflate(R.layout.layout_child, null)
+        if (mconvertView == null) {
+            val inflater =
+                context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+            mconvertView = inflater.inflate(R.layout.layout_child, null)
         }
 
-        val bodyTv = convertView!!.tv_title
+        val bodyTv = mconvertView!!.tv_title
         bodyTv.setText(bodyTitle)
-        return convertView
+        return mconvertView
     }
 
     override fun isChildSelectable(groupPosition: Int, childPosition: Int): Boolean {
