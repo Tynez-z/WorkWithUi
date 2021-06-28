@@ -8,7 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
-
+// TODO: add to const
 class StepBar : LinearLayout {
 
     private var mCurrentBackground: Int = R.drawable.shape_current //текущий фон круга
@@ -45,15 +45,15 @@ class StepBar : LinearLayout {
     fun init() {
         orientation = HORIZONTAL
         gravity = Gravity.CENTER_VERTICAL
-        for (item: Int in 0 until mStepCount) {
+        for (item in 0 until mStepCount) {
             tvCurrentStep = TextView(context)
             if (item < mStepCount - 1 && isShow) {//интервал
                 lineView = View(context)
                 lineView!!.setBackgroundResource(lineColor)
-                val params1 = LayoutParams(convert(mLineWidth.toFloat()), convert(mLineHeight.toFloat()))
-                params1.gravity = Gravity.CENTER
-                params1.leftMargin = mSpaceBetween
-                lineView!!.layoutParams = params1
+                val params = LayoutParams(convert(mLineWidth.toFloat()), convert(mLineHeight.toFloat()))
+                params.gravity = Gravity.CENTER
+                params.leftMargin = mSpaceBetween
+                lineView!!.layoutParams = params
             }
             var background: Int
             var width: Int = mNormalWidth
@@ -73,7 +73,6 @@ class StepBar : LinearLayout {
                 }
             }
             tvCurrentStep!!.gravity = Gravity.CENTER
-//            tvCurrentStep!!.textSize = textSize
             if (contentText.isNotEmpty())
                 tvCurrentStep!!.text = contentText[item]
             else
@@ -96,23 +95,23 @@ class StepBar : LinearLayout {
 
     //для вызова в активити/фрагмент
     fun setData(barBuilder: BarBuilder) {
-        this.mCurrentBackground = barBuilder.mCurrentBackground
-        this.mPassedBackground = barBuilder.mPassedBackground
-        this.mNormalBackground = barBuilder.mNormalBackground
-        this.mSpaceBetween = barBuilder.mSpaceBetween
-        this.mNormalWidth = barBuilder.mNormalWidth
-        this.mCurrentWidth = barBuilder.mCurrentWidth
-        this.mCurrentStep = barBuilder.mCurrentStep
-        this.mStepCount = barBuilder.mStepCount
-        this.mLineWidth = barBuilder.mLineWidth
-        this.mLineHeight = barBuilder.mLineHeight
-        this.isShow = barBuilder.isShow
-        this.lineColor = barBuilder.lineColor
-        this.currentTextColor = barBuilder.currentTextColor
-        this.passTextColor = barBuilder.passTextColor
-        this.normalTextColor = barBuilder.normalTextColor
-        this.textSize = barBuilder.textSize
-        this.contentText = barBuilder.contentText
+        mCurrentBackground = barBuilder.mCurrentBackground
+        mPassedBackground = barBuilder.mPassedBackground
+        mNormalBackground = barBuilder.mNormalBackground
+        mSpaceBetween = barBuilder.mSpaceBetween
+        mNormalWidth = barBuilder.mNormalWidth
+        mCurrentWidth = barBuilder.mCurrentWidth
+        mCurrentStep = barBuilder.mCurrentStep
+        mStepCount = barBuilder.mStepCount
+        mLineWidth = barBuilder.mLineWidth
+        mLineHeight = barBuilder.mLineHeight
+        isShow = barBuilder.isShow
+        lineColor = barBuilder.lineColor
+        currentTextColor = barBuilder.currentTextColor
+        passTextColor = barBuilder.passTextColor
+        normalTextColor = barBuilder.normalTextColor
+        textSize = barBuilder.textSize
+        contentText = barBuilder.contentText
     }
 
     //для билдера
@@ -137,9 +136,9 @@ class StepBar : LinearLayout {
 
         //установка количества шагов
         fun setUp(stepCount: Int, currentStep: Int): BarBuilder {
-            this.mStepCount = stepCount
+            mStepCount = stepCount
             if (currentStep > 0)
-                this.mCurrentStep = currentStep - 1
+                mCurrentStep = currentStep - 1
             return this
         }
 
@@ -152,7 +151,7 @@ class StepBar : LinearLayout {
 
         //установка текста
         fun setTextSize(size: Int): BarBuilder {
-            this.textSize = size
+            textSize = size
             return this
         }
 
@@ -172,14 +171,14 @@ class StepBar : LinearLayout {
         }
 
         //установка видимости разделителя
-        fun isShowLine(isShow: Boolean): BarBuilder {
-            this.isShow = isShow
+        fun isShowLine(show: Boolean): BarBuilder {
+            isShow = show
             return this
         }
 
         //установка цвета линии
         fun setLineColor(color: Int): BarBuilder {
-            this.lineColor = color
+            lineColor = color
             return this
         }
 
@@ -199,14 +198,10 @@ class StepBar : LinearLayout {
         }
 
         //установка цвета текста
-        fun setTextColor(
-            currentTextColor: Int,
-            passTextColor: Int,
-            normalTextColor: Int
-        ): BarBuilder {
-            this.currentTextColor = currentTextColor
-            this.passTextColor = passTextColor
-            this.normalTextColor = normalTextColor
+        fun setTextColor(currentColor: Int, passColor: Int, normalColor: Int): BarBuilder {
+            currentTextColor = currentColor
+            passTextColor = passColor
+            normalTextColor = normalColor
             return this
         }
 

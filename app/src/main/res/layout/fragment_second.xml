@@ -89,6 +89,7 @@
             app:layout_constraintStart_toStartOf="@+id/radio_group"
             app:layout_constraintTop_toBottomOf="@+id/radio_group" />
 
+        <!-- TODO: add to divider style  -->
         <ExpandableListView
             android:id="@+id/expendableListView"
             android:layout_width="match_parent"
@@ -96,7 +97,6 @@
             android:layout_marginStart="@dimen/margin_20dp"
             android:layout_marginTop="@dimen/margin_10dp"
             android:layout_marginEnd="@dimen/margin_20dp"
-            android:layout_weight="1"
             android:background="@drawable/design_shape_list"
             android:childDivider="@color/white"
             android:divider="@color/background_color"

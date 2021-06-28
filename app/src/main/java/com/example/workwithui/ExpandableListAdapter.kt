@@ -8,38 +8,25 @@ import android.widget.BaseExpandableListAdapter
 import kotlinx.android.synthetic.main.layout_group.view.*
 
 class ExpandableListAdapter(
-        var context: Context,
-        var header: List<String>,
-        var body: HashMap<String, List<String>>
+        private var context: Context,
+        private var header: List<String>,
+        private var body: HashMap<String, List<String>>
 ) : BaseExpandableListAdapter() {
 
-    override fun getGroupCount(): Int {
-        return header.size
-    }
+    override fun getGroupCount() = header.size
 
-    override fun getChildrenCount(groupPosition: Int): Int {
-            return this.body[this.header[groupPosition]]!!.size
-    }
+    override fun getChildrenCount(groupPosition: Int) = body[header[groupPosition]]!!.size
 
-    override fun getGroup(groupPosition: Int): String {
-        return header[groupPosition]
-    }
+    override fun getGroup(groupPosition: Int) = header[groupPosition]
 
-    override fun getChild(groupPosition: Int, childPosition: Int): Any {
-        return this.body[this.header[groupPosition]]!![childPosition]
-    }
+    override fun getChild(groupPosition: Int, childPosition: Int) =
+            body[header[groupPosition]]!![childPosition]
 
-    override fun getGroupId(groupPosition: Int): Long {
-        return groupPosition.toLong()
-    }
+    override fun getGroupId(groupPosition: Int) = groupPosition.toLong()
 
-    override fun getChildId(groupPosition: Int, childPosition: Int): Long {
-        return childPosition.toLong()
-    }
+    override fun getChildId(groupPosition: Int, childPosition: Int) = childPosition.toLong()
 
-    override fun hasStableIds(): Boolean {
-        return false
-    }
+    override fun hasStableIds() = false
 
     override fun getGroupView(
             groupPosition: Int,
@@ -48,19 +35,19 @@ class ExpandableListAdapter(
             parent: ViewGroup?
     ): View {
 
-        var mconvertView = convertView
-        val headerTitle = getGroup(groupPosition) as String
+        var mConvertView = convertView
+        val headerTitle = getGroup(groupPosition)
 
-        if (mconvertView == null) {
+        if (mConvertView == null) {
             val inflater =
-                context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-            mconvertView = inflater.inflate(R.layout.layout_group, null)
+                    context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+            mConvertView = inflater.inflate(R.layout.layout_group, null)
         }
 
-        val headerTv = mconvertView!!.tv_title
+        val headerTv = mConvertView!!.tv_title
         headerTv.text = headerTitle
 
-        return mconvertView
+        return mConvertView
     }
 
     override fun getChildView(
@@ -69,18 +56,17 @@ class ExpandableListAdapter(
             isLastChild: Boolean,
             convertView: View?,
             parent: ViewGroup?): View {
-        var mconvertView = convertView
-        val bodyTitle = getChild(groupPosition, childPosition) as String
-        if (mconvertView == null) { val inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-            mconvertView = inflater.inflate(R.layout.layout_child, null)
+        var mConvertView = convertView
+        val bodyTitle = getChild(groupPosition, childPosition)
+        if (mConvertView == null) {
+            val inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+            mConvertView = inflater.inflate(R.layout.layout_child, null)
         }
 
-        val bodyTv = mconvertView!!.tv_title
-        bodyTv.setText(bodyTitle)
-        return mconvertView
+        val bodyTv = mConvertView!!.tv_title
+        bodyTv.text = bodyTitle
+        return mConvertView
     }
 
-    override fun isChildSelectable(groupPosition: Int, childPosition: Int): Boolean {
-        return true
-    }
+    override fun isChildSelectable(groupPosition: Int, childPosition: Int) = true
 }

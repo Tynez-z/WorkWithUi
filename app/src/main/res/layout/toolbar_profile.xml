@@ -6,7 +6,7 @@
     android:id="@+id/constraint">
 
     <View
-        android:id="@+id/fake_toolbar"
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="@dimen/size_55dp"
         app:layout_constraintTop_toTopOf="@id/constraint" />
@@ -23,5 +23,4 @@
         android:src="@drawable/ic_settings"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,7 +1,5 @@
 <resources>
     <string name="app_name">WorkWithUi</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="documents_folder">Documents &amp; Notes</string>
     <string name="home">Home</string>
     <string name="calendar">Calendar</string>
@@ -16,7 +14,7 @@
         <font color='red'>*
         </font>
     </string>
-    <string name="membership_id">Membership ID: 01-99-033</string>
+    <string name="membership_id">Membership ID: 01–99–033</string>
     <string name="number_mobile">+98 999 999 999</string>
     <string name="name_user_profile">Mrs Jane Doe</string>
     <string name="medical_records">Medical Records</string>

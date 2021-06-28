@@ -7,7 +7,6 @@ import androidx.navigation.fragment.findNavController
 import com.example.workwithui.databinding.FragmentBaanBinding
 import kotlinx.android.synthetic.main.toolbar_settings.*
 
-
 class BaanFragment : Fragment(R.layout.fragment_baan) {
 
     lateinit var binding: FragmentBaanBinding

@@ -27,6 +27,7 @@ class SecondFragment : Fragment(R.layout.fragment_second) {
         }
     }
 
+    // TODO: rename body names
     private fun showList() {
         header = ArrayList()
         body = HashMap()
