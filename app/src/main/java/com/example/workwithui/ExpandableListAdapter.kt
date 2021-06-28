@@ -18,7 +18,7 @@ class ExpandableListAdapter(
     }
 
     override fun getChildrenCount(groupPosition: Int): Int {
-        return this.body[this.header[groupPosition]]!!.size
+            return this.body[this.header[groupPosition]]!!.size
     }
 
     override fun getGroup(groupPosition: Int): String {
@@ -68,14 +68,10 @@ class ExpandableListAdapter(
             childPosition: Int,
             isLastChild: Boolean,
             convertView: View?,
-            parent: ViewGroup?
-    ): View {
+            parent: ViewGroup?): View {
         var mconvertView = convertView
         val bodyTitle = getChild(groupPosition, childPosition) as String
-
-        if (mconvertView == null) {
-            val inflater =
-                context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+        if (mconvertView == null) { val inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
             mconvertView = inflater.inflate(R.layout.layout_child, null)
         }
 

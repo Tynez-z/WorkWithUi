@@ -45,4 +45,8 @@
     <string name="icon_file">iconFile</string>
     <string name="icon_trash">iconTrash</string>
     <string name="icon_add">iconAdd</string>
+    <string name="baan_info_text">BAAN info</string>
+    <string name="calendar_text">Calendar</string>
+    <string name="education_text">Education</string>
+    <string name="home_text">Home</string>
 </resources>

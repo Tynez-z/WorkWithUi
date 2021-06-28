@@ -5,7 +5,7 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.workwithui.databinding.FragmentFirstBinding
-import kotlinx.android.synthetic.main.fragment_first.*
+import kotlinx.android.synthetic.main.toolbar_profile.*
 
 class FirstFragment : Fragment(R.layout.fragment_first) {
 
@@ -18,7 +18,5 @@ class FirstFragment : Fragment(R.layout.fragment_first) {
         settings.setOnClickListener {
             findNavController().navigate(R.id.action_firstFragment_to_secondFragment)
         }
-
-
     }
 }

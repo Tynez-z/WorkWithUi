@@ -2,13 +2,13 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <data></data>
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraint_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/background_color">
+
+        <include layout="@layout/toolbar_settings" />
 
         <TextView
             android:id="@+id/title"
@@ -21,30 +21,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/constraint_layout" />
-
-        <ImageView
-            android:id="@+id/back"
-            android:layout_width="@dimen/size_18dp"
-            android:layout_height="@dimen/size_18dp"
-            android:layout_marginTop="@dimen/margin_20dp"
-            android:layout_marginEnd="@dimen/margin_60dp"
-            android:src="@drawable/ic_left_arrow"
-            app:layout_constraintEnd_toStartOf="@+id/title"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:contentDescription="@string/icon_go_to_back" />
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="@dimen/size_15dp"
-            android:layout_height="@dimen/size_15dp"
-            android:layout_marginStart="@dimen/margin_60dp"
-            android:layout_marginTop="@dimen/margin_25dp"
-            android:src="@drawable/ic_cancel"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/title"
-            app:layout_constraintTop_toTopOf="parent"
-            android:contentDescription="@string/icon_cancel" />
 
         <com.example.workwithui.StepBar
             android:id="@+id/stepBar"
@@ -137,7 +113,7 @@
             android:id="@+id/btn_next"
             style="@style/styleButtonNext"
             android:layout_width="match_parent"
-            android:layout_height="43dp"
+            android:layout_height="@dimen/size_43dp"
             android:layout_marginStart="@dimen/margin_50dp"
             android:layout_marginTop="@dimen/margin_25dp"
             android:layout_marginEnd="@dimen/margin_50dp"

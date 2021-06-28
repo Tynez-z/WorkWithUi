@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/imageViewProfile"
+        android:layout_width="@dimen/width_img_profile"
+        android:layout_height="@dimen/height_img_profile"
+        android:layout_marginStart="@dimen/margin_35dp"
+        android:background="@drawable/design_img_profile"
+        android:contentDescription="@string/icon_profile"
+        android:padding="@dimen/padding_20dp"
+        android:src="@drawable/ic_userimage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/name"
+        style="@style/boldStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fake_toolbar"
+        android:layout_marginStart="@dimen/margin_20dp"
+        android:layout_marginTop="@dimen/margin_5dp"
+        android:layout_toEndOf="@+id/imageViewProfile"
+        android:text="@string/name_user_profile"
+        app:layout_constraintStart_toEndOf="@id/imageViewProfile"
+        app:layout_constraintTop_toBottomOf="@+id/fake_toolbar" />
+
+    <TextView
+        android:id="@+id/number"
+        style="@style/normallyStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_20dp"
+        android:layout_marginTop="@dimen/margin_5dp"
+        android:layout_toEndOf="@+id/imageViewProfile"
+        android:text="@string/number_mobile"
+        app:layout_constraintStart_toEndOf="@+id/imageViewProfile"
+        app:layout_constraintTop_toBottomOf="@+id/name" />
+
+    <TextView
+        android:id="@+id/membership_id"
+        style="@style/normallyStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/number"
+        android:layout_marginStart="@dimen/margin_20dp"
+        android:layout_marginTop="@dimen/margin_5dp"
+        android:layout_toEndOf="@+id/imageViewProfile"
+        android:text="@string/membership_id"
+        app:layout_constraintStart_toEndOf="@+id/imageViewProfile"
+        app:layout_constraintTop_toBottomOf="@+id/number" />
+
+    <ImageView
+        android:id="@+id/img_camera"
+        android:layout_width="@dimen/width_img_camera"
+        android:layout_height="@dimen/height_img_camera"
+        android:layout_marginStart="@dimen/margin_88dp"
+        android:layout_marginTop="@dimen/margin_48dp"
+        android:background="@drawable/design_img_camera"
+        android:contentDescription="@string/icon_camera"
+        android:padding="@dimen/padding_2dp"
+        android:src="@drawable/ic_camera"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewProfile"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fake_toolbar" />
+
+    <TextView
+        android:id="@+id/personal_details"
+        style="@style/colorStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_20dp"
+        android:layout_marginTop="@dimen/margin_15dp"
+        android:text="@string/personal_details"
+        app:layout_constraintStart_toEndOf="@+id/imageViewProfile"
+        app:layout_constraintTop_toBottomOf="@+id/membership_id" />
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/size_2dp"
+        android:layout_marginTop="@dimen/margin_15dp"
+        android:background="@drawable/shape_divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/personal_details" />
+</androidx.constraintlayout.widget.ConstraintLayout>

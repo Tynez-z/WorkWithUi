@@ -28,6 +28,7 @@
     <dimen name="size_22dp">22dp</dimen>
     <dimen name="size_80dp">80dp</dimen>
     <dimen name="size_40dp">40dp</dimen>
+    <dimen name="size_43dp">43dp</dimen>
     <dimen name="size_50dp">50dp</dimen>
     <dimen name="size_55dp">55dp</dimen>
     <dimen name="size_70dp">70dp</dimen>
@@ -36,8 +37,8 @@
 
     <dimen name="margin_linear">2dp</dimen>
 
-    <dimen name="height_card">50dp</dimen>
-    <dimen name="width_card">50dp</dimen>
+    <dimen name="height_card">130dp</dimen>
+    <dimen name="width_card">150dp</dimen>
 
     <dimen name="height_img">50dp</dimen>
     <dimen name="width_img">50dp</dimen>

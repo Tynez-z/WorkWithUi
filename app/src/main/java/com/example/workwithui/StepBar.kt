@@ -19,7 +19,7 @@ class StepBar : LinearLayout {
     private var mCurrentWidth: Int = 18 //ширина текущего
     private var mCurrentStep: Int = 0 //по дефолту текущий шаг
     private var mStepCount: Int = 3 //по дефолту количеству кругов
-    private var mLineWidth: Int = 20 //по дефолту интервал линии (ширина)
+    private var mLineWidth: Int = 20 //по дефолту интервал линии (длина)
     private var mLineHeight: Int = 1 //по дефолту интервал линии (высота)
     private var isShow: Boolean = true //по дефолту показывать разделитель
     private var currentTextColor: Int = 0 //цвет текущего круга
@@ -34,12 +34,7 @@ class StepBar : LinearLayout {
 
     constructor(context: Context?) : super(context)
     constructor(context: Context?, attrs: AttributeSet?) : super(context, attrs)
-    constructor(context: Context?, attrs: AttributeSet?, defStyleAttr: Int) : super(
-        context,
-        attrs,
-        defStyleAttr
-    )
-
+    constructor(context: Context?, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs, defStyleAttr)
 
     private fun convert(dp: Float): Int {
         return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, resources.displayMetrics)
@@ -55,8 +50,7 @@ class StepBar : LinearLayout {
             if (item < mStepCount - 1 && isShow) {//интервал
                 lineView = View(context)
                 lineView!!.setBackgroundResource(lineColor)
-                val params1 =
-                    LayoutParams(convert(mLineWidth.toFloat()), convert(mLineHeight.toFloat()))
+                val params1 = LayoutParams(convert(mLineWidth.toFloat()), convert(mLineHeight.toFloat()))
                 params1.gravity = Gravity.CENTER
                 params1.leftMargin = mSpaceBetween
                 lineView!!.layoutParams = params1
@@ -66,7 +60,7 @@ class StepBar : LinearLayout {
             when {
                 item < mCurrentStep -> {
                     background = mPassedBackground
-                    tvCurrentStep!!.setTextColor(context.resources.getColor(passTextColor))
+                    tvCurrentStep!!.setTextColor(GONE)
                 }
                 item == mCurrentStep -> {
                     background = mCurrentBackground
@@ -129,11 +123,11 @@ class StepBar : LinearLayout {
         var mSpaceBetween: Int = 10 //интвервал
         var mNormalWidth: Int = 70 //длина обычного
         var mCurrentWidth: Int = 70 //длина текущего
-        var mCurrentStep: Int = 5 //по дефолту текущий - круг 0
-        var mStepCount: Int = 7 //по дефолту 3 круга
-        var mLineWidth: Int = 10 //по дефолту длина линии
-        var mLineHeight: Int = 2 //по дефолту высота линии
-        var isShow: Boolean = true //по дефолту показывать разделитлеь
+        var mCurrentStep: Int = 5 //текущий
+        var mStepCount: Int = 7 //количество кругов
+        var mLineWidth: Int = 10 //длина линии
+        var mLineHeight: Int = 2 //высота линии
+        var isShow: Boolean = true //видимость разделителя
         var lineColor: Int = R.color.line_progress //цвет линии
         var currentTextColor: Int = R.color.current //цвет текста текущего
         var passTextColor: Int = R.color.background_color //цвет текста пройденного
@@ -176,7 +170,6 @@ class StepBar : LinearLayout {
             mNormalWidth = normalWidth //длина обычная
             return this
         }
-
 
         //установка видимости разделителя
         fun isShowLine(isShow: Boolean): BarBuilder {

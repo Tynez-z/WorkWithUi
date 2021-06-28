@@ -23,6 +23,10 @@
         <item name="android:textSize">12sp</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textColor">@color/text_grey</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginTop">@dimen/margin_10dp</item>
     </style>
 
     <style name="boldStyleTitle">
@@ -67,8 +71,10 @@
     </style>
 
     <style name="styleCardViewLeft">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">@dimen/width_card</item>
+        <item name="android:layout_height">@dimen/height_card</item>
+        <item name="android:layout_rowWeight">1</item>
+        <item name="android:layout_columnWeight">1</item>
         <item name="android:layout_column">0</item>
         <item name="android:layout_gravity">fill</item>
         <item name="android:layout_marginStart">@dimen/left_start_card</item>
@@ -81,8 +87,10 @@
     </style>
 
     <style name="styleCardViewRight">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">@dimen/width_card</item>
+        <item name="android:layout_height">@dimen/height_card</item>
+        <item name="android:layout_rowWeight">1</item>
+        <item name="android:layout_columnWeight">1</item>
         <item name="android:layout_column">1</item>
         <item name="android:layout_gravity">fill</item>
         <item name="android:layout_marginStart">@dimen/right_start_card</item>
@@ -94,5 +102,20 @@
         <item name="cardElevation">@dimen/size_0dp</item>
     </style>
 
+    <style name="linearForCard">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_vertical|center_horizontal</item>
+        <item name="android:gravity">center</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="styleTextEmptyFragment">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
 
 </resources>
