@@ -1,10 +1,10 @@
-package com.example.workwithui
+package com.example.ui
 
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.example.workwithui.databinding.FragmentSecondBinding
+import com.example.ui.databinding.FragmentSecondBinding
 import kotlinx.android.synthetic.main.fragment_second.*
 import kotlinx.android.synthetic.main.toolbar_settings.*
 
@@ -31,6 +31,8 @@ class SecondFragment : Fragment(R.layout.fragment_second) {
         back.setOnClickListener {
             findNavController().navigate(R.id.action_secondFragment_to_firstFragment)
         }
+
+        //TODO add work with close icon
     }
 
     private fun showList() {
@@ -64,32 +66,18 @@ class SecondFragment : Fragment(R.layout.fragment_second) {
         body[header[8]] = bodyEmpty
     }
 
+    //TODO make with binding in layout
     private fun showExpandableList () {
-        rb_yes.setOnClickListener {
-            expendableListView.visibility = View.VISIBLE
-            upload.visibility = View.VISIBLE
-        }
+        secondFragmentBinding.apply {
+            rb_yes.setOnClickListener {
+                expendableListView.visibility = View.VISIBLE
+                upload.visibility = View.VISIBLE
+            }
 
-        rb_no.setOnClickListener {
-            expendableListView.visibility = View.INVISIBLE
-            upload.visibility = View.INVISIBLE
+            rb_no.setOnClickListener {
+                expendableListView.visibility = View.INVISIBLE
+                upload.visibility = View.INVISIBLE
+            }
         }
     }
 }
-
-//        val files = listOf("PDF20201223.pdf", "PDF20201223.pdf")
-//        val body = HashMap<String, List<String>>()
-//
-//        body["CT Scan"] = files
-//        body["X-Ray"] = emptyList()
-//        body["Doctors letter"] = emptyList()
-//        body["Lab test"] = emptyList()
-//        body["Blood test"] = emptyList()
-//        body["ECHO"] = emptyList()
-//        body["EKG"] = emptyList()
-//        body["Forms"] = emptyList()
-//        body["Other"] = emptyList()
-//
-//        val header = ArrayList(body.keys)
-//        val listViewAdapter = ExpandableListAdapter(requireContext(), header as ArrayList<String>, body)
-//        expendableListView.setAdapter(listViewAdapter)

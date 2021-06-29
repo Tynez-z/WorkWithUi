@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/constraint"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!-- TODO use universal size (match/wrap/0dp) and rename views-->
     <TextView
         android:id="@+id/tv_title"
         style="@style/textChildList"
@@ -15,7 +17,7 @@
         android:gravity="center_vertical"
         android:paddingStart="@dimen/padding_35dp"
         android:paddingEnd="@dimen/padding_35dp"
-        android:text="@string/example_for_child"
+        tools:text="@string/example_for_child"
         app:layout_constraintTop_toTopOf="@id/constraint" />
 
     <ImageView

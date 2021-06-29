@@ -11,6 +11,7 @@
         android:layout_height="@dimen/size_55dp"
         app:layout_constraintTop_toTopOf="@id/constraint" />
 
+    <!-- TODO use universal size (match/wrap/0dp) and rename views-->
     <ImageView
         android:id="@+id/settings"
         android:layout_width="@dimen/size_22dp"
@@ -18,8 +19,8 @@
         android:layout_marginTop="@dimen/margin_12dp"
         android:layout_marginEnd="@dimen/margin_12dp"
         android:clickable="true"
-        android:contentDescription="@string/icon_settings"
         android:focusable="true"
+        android:contentDescription="@string/icon_settings"
         android:src="@drawable/ic_settings"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

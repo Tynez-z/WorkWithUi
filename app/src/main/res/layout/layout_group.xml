@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <!-- TODO use universal size (match/wrap/0dp) and rename views-->
     <TextView
         android:id="@+id/tv_title"
         style="@style/textGroupList"

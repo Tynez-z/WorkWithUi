@@ -1,14 +1,15 @@
-package com.example.workwithui
+package com.example.ui
 
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.example.workwithui.databinding.FragmentBaanBinding
+import com.example.ui.databinding.FragmentBaanBinding
 import kotlinx.android.synthetic.main.toolbar_settings.*
 
 class BaanFragment : Fragment(R.layout.fragment_baan) {
 
+    //TODO use inside fun
     lateinit var fragmentBaanBinding: FragmentBaanBinding
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

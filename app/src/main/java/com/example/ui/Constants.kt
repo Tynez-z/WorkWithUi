@@ -1,4 +1,4 @@
-package com.example.workwithui
+package com.example.ui
 
 //For adapter
 const val CT_SCAN = "CT Scan"

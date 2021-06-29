@@ -1,10 +1,10 @@
-package com.example.workwithui
+package com.example.ui
 
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.example.workwithui.databinding.FragmentHomeBinding
+import com.example.ui.databinding.FragmentHomeBinding
 import kotlinx.android.synthetic.main.toolbar_settings.*
 
 class HomeFragment : Fragment(R.layout.fragment_home) {

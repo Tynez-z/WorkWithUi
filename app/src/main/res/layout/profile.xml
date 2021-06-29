@@ -4,6 +4,7 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <!-- TODO use universal size (match/wrap/0dp) and rename views-->
     <ImageView
         android:id="@+id/imageViewProfile"
         android:layout_width="@dimen/width_img_profile"
@@ -45,7 +46,6 @@
         style="@style/normallyStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/number"
         android:layout_marginStart="@dimen/margin_20dp"
         android:layout_marginTop="@dimen/margin_5dp"
         android:layout_toEndOf="@+id/imageViewProfile"

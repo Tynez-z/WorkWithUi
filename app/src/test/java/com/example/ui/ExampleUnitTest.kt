@@ -1,4 +1,4 @@
-package com.example.workwithui
+package com.example.ui
 
 import org.junit.Test
 

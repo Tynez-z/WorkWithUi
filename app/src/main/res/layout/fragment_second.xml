@@ -2,6 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <!-- TODO use universal size (match/wrap/0dp) and rename views-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraint_layout"
         android:layout_width="match_parent"
@@ -12,6 +13,7 @@
             layout="@layout/toolbar_settings"
             app:layout_constraintTop_toTopOf="@id/constraint_layout" />
 
+        <!-- TODO use in baseToolbar and use binding (visibility) -->
         <TextView
             android:id="@+id/title"
             style="@style/styleNameTitle"
@@ -24,7 +26,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/constraint_layout" />
 
-        <com.example.workwithui.StepBar
+        <com.example.ui.StepBar
             android:id="@+id/stepBar"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/size_50dp"
@@ -45,6 +47,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/stepBar" />
 
+        <!-- TODO use buttons and binding + extension fun -->
         <RadioGroup
             android:id="@+id/radio_group"
             android:layout_width="wrap_content"

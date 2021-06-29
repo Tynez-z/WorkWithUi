@@ -1,4 +1,4 @@
-package com.example.workwithui
+package com.example.ui
 
 import android.content.Context
 import android.view.LayoutInflater
