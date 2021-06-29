@@ -134,19 +134,19 @@ class StepBar : LinearLayout {
         var mCurrentBackground: Int = R.drawable.shape_current //текущий
         var mPassedBackground: Int = R.drawable.ic_check_mark //пройденное
         var mNormalBackground: Int = R.drawable.shape_normal //обычное состояние
-        var mSpaceBetween: Int = 10 //интвервал
-        var mNormalWidth: Int = 70 //длина обычного
-        var mCurrentWidth: Int = 70 //длина текущего
-        var mCurrentStep: Int = 5 //текущий
-        var mStepCount: Int = 7 //количество кругов
-        var mLineWidth: Int = 10 //длина линии
-        var mLineHeight: Int = 2 //высота линии
+        var mSpaceBetween = M_SPACE_BETWEEN //интвервал
+        var mNormalWidth = M_NORMAL_WIDTH //длина обычного
+        var mCurrentWidth = M_CURRENT_WIDTH //длина текущего
+        var mCurrentStep = M_CURRENT_STEP //текущий
+        var mStepCount = M_STEP_COUNT //количество кругов
+        var mLineWidth = M_LINE_WIDTH //длина линии
+        var mLineHeight = M_LINE_HEIGHT //высота линии
         var isShow: Boolean = true //видимость разделителя
         var lineColor: Int = R.color.line_progress //цвет линии
         var currentTextColor: Int = R.color.current //цвет текста текущего
         var passTextColor: Int = R.color.background_color //цвет текста пройденного
         var normalTextColor: Int = R.color.text_grey //цвет текста обычного
-        var textSize: Int = 13 //размер текста
+        var textSize: Int = M_TEXT_SIZE //размер текста
         var contentText = emptyArray<String>() //установить текст
 
         //установка количества шагов

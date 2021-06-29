@@ -22,38 +22,14 @@ class SecondFragment : Fragment(R.layout.fragment_second) {
                 .build()
                 .init()
         showList()
+
         val listViewAdapter = ExpandableListAdapter(requireContext(), header, body)
         expendableListView.setAdapter(listViewAdapter)
 
-//        val files = listOf("PDF20201223.pdf", "PDF20201223.pdf")
-//        val body = HashMap<String, List<String>>()
-//
-//        body["CT Scan"] = files
-//        body["X-Ray"] = emptyList()
-//        body["Doctors letter"] = emptyList()
-//        body["Lab test"] = emptyList()
-//        body["Blood test"] = emptyList()
-//        body["ECHO"] = emptyList()
-//        body["EKG"] = emptyList()
-//        body["Forms"] = emptyList()
-//        body["Other"] = emptyList()
-//
-//        val header = ArrayList(body.keys)
-//        val listViewAdapter = ExpandableListAdapter(requireContext(), header as ArrayList<String>, body)
-//        expendableListView.setAdapter(listViewAdapter)
+        showExpandableList()
 
         back.setOnClickListener {
             findNavController().navigate(R.id.action_secondFragment_to_firstFragment)
-        }
-
-        rb_yes.setOnClickListener {
-            expendableListView.visibility = View.VISIBLE
-            upload.visibility = View.VISIBLE
-        }
-
-        rb_no.setOnClickListener {
-            expendableListView.visibility = View.INVISIBLE
-            upload.visibility = View.INVISIBLE
         }
     }
 
@@ -87,4 +63,33 @@ class SecondFragment : Fragment(R.layout.fragment_second) {
         body[header[7]] = bodyEmpty
         body[header[8]] = bodyEmpty
     }
+
+    private fun showExpandableList () {
+        rb_yes.setOnClickListener {
+            expendableListView.visibility = View.VISIBLE
+            upload.visibility = View.VISIBLE
+        }
+
+        rb_no.setOnClickListener {
+            expendableListView.visibility = View.INVISIBLE
+            upload.visibility = View.INVISIBLE
+        }
+    }
 }
+
+//        val files = listOf("PDF20201223.pdf", "PDF20201223.pdf")
+//        val body = HashMap<String, List<String>>()
+//
+//        body["CT Scan"] = files
+//        body["X-Ray"] = emptyList()
+//        body["Doctors letter"] = emptyList()
+//        body["Lab test"] = emptyList()
+//        body["Blood test"] = emptyList()
+//        body["ECHO"] = emptyList()
+//        body["EKG"] = emptyList()
+//        body["Forms"] = emptyList()
+//        body["Other"] = emptyList()
+//
+//        val header = ArrayList(body.keys)
+//        val listViewAdapter = ExpandableListAdapter(requireContext(), header as ArrayList<String>, body)
+//        expendableListView.setAdapter(listViewAdapter)

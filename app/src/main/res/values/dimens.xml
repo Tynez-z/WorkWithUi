@@ -60,4 +60,5 @@
     <dimen name="height_img_camera">15dp</dimen>
     <dimen name="width_img_camera">15dp</dimen>
     <dimen name="radius_card">4dp</dimen>
+
 </resources>
