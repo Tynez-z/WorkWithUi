@@ -4,11 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".EducationFragment">
 
-        <include layout="@layout/toolbar_settings" />
+        <include
+            layout="@layout/toolbar_settings"
+            app:layout_constraintTop_toTopOf="@id/constraint" />
 
         <TextView
             style="@style/styleTextEmptyFragment"

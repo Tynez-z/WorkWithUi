@@ -8,11 +8,12 @@ import com.example.workwithui.databinding.FragmentEducationBinding
 import kotlinx.android.synthetic.main.toolbar_settings.*
 
 class EducationFragment : Fragment(R.layout.fragment_education) {
-    lateinit var binding: FragmentEducationBinding
+
+    lateinit var fragmentEducationBinding: FragmentEducationBinding
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding = FragmentEducationBinding.bind(view)
+        fragmentEducationBinding = FragmentEducationBinding.bind(view)
         back.setOnClickListener {
             findNavController().navigate(R.id.action_educationFragment_to_firstFragment)
         }

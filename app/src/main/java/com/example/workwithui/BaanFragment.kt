@@ -9,11 +9,11 @@ import kotlinx.android.synthetic.main.toolbar_settings.*
 
 class BaanFragment : Fragment(R.layout.fragment_baan) {
 
-    lateinit var binding: FragmentBaanBinding
+    lateinit var fragmentBaanBinding: FragmentBaanBinding
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding = FragmentBaanBinding.bind(view)
+        fragmentBaanBinding = FragmentBaanBinding.bind(view)
 
         back.setOnClickListener {
             findNavController().navigate(R.id.action_baanFragment_to_firstFragment)

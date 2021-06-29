@@ -9,11 +9,11 @@ import kotlinx.android.synthetic.main.toolbar_settings.*
 
 class HomeFragment : Fragment(R.layout.fragment_home) {
 
-    lateinit var binding: FragmentHomeBinding
+    lateinit var fragmentHomeBinding: FragmentHomeBinding
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding = FragmentHomeBinding.bind(view)
+        fragmentHomeBinding = FragmentHomeBinding.bind(view)
         back.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_firstFragment)
         }

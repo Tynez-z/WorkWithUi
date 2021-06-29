@@ -46,7 +46,6 @@ class ExpandableListAdapter(
 
         val headerTv = mConvertView!!.tv_title
         headerTv.text = headerTitle
-
         return mConvertView
     }
 
@@ -62,7 +61,6 @@ class ExpandableListAdapter(
             val inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
             mConvertView = inflater.inflate(R.layout.layout_child, null)
         }
-
         val bodyTv = mConvertView!!.tv_title
         bodyTv.text = bodyTitle
         return mConvertView

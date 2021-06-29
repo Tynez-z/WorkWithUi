@@ -8,25 +8,40 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
-// TODO: add to const
+
 class StepBar : LinearLayout {
+
+    companion object {
+        const val SPACE_BETWEEN: Int = 25
+        const val NORMAL_WIDTH: Int = 14
+        const val CURRENT_WIDTH: Int = 18
+        const val CURRENT_STEP: Int = 0
+        const val STEP_COUNT: Int = 3
+        const val LINE_WIDTH: Int = 20
+        const val LINE_HEIGHT: Int = 1
+        const val CURRENT_TEXT_COLOR: Int = 0
+        const val PASS_TEXT_COLOR: Int = 0
+        const val NORMAL_TEXT_COLOR: Int = 0
+        const val LINE_COLOR: Int = 0
+        const val TEXT_SIZE: Int = 13
+    }
 
     private var mCurrentBackground: Int = R.drawable.shape_current //текущий фон круга
     private var mPassedBackground: Int = R.drawable.shape_normal //фон пройденного круга
     private var mNormalBackground: Int = R.drawable.shape_failed //фон обычный
-    private var mSpaceBetween: Int = 25 //интвервал
-    private var mNormalWidth: Int = 14 //ширина обычная
-    private var mCurrentWidth: Int = 18 //ширина текущего
-    private var mCurrentStep: Int = 0 //по дефолту текущий шаг
-    private var mStepCount: Int = 3 //по дефолту количеству кругов
-    private var mLineWidth: Int = 20 //по дефолту интервал линии (длина)
-    private var mLineHeight: Int = 1 //по дефолту интервал линии (высота)
+    private var mSpaceBetween = SPACE_BETWEEN //интвервал
+    private var mNormalWidth = NORMAL_WIDTH //ширина обычная
+    private var mCurrentWidth = CURRENT_WIDTH //ширина текущего
+    private var mCurrentStep = CURRENT_STEP //по дефолту текущий шаг
+    private var mStepCount = STEP_COUNT //по дефолту количеству кругов
+    private var mLineWidth = LINE_WIDTH //по дефолту интервал линии (длина)
+    private var mLineHeight = LINE_HEIGHT //по дефолту интервал линии (высота)
     private var isShow: Boolean = true //по дефолту показывать разделитель
-    private var currentTextColor: Int = 0 //цвет текущего круга
-    private var passTextColor: Int = 0 //цвет пройденного круга
-    private var normalTextColor: Int = 0 //цвет в обычном состоянии
-    private var lineColor: Int = 0 //цвет линии
-    private var textSize: Int = 13 //размер текста
+    private var currentTextColor = CURRENT_TEXT_COLOR //цвет текущего круга
+    private var passTextColor = PASS_TEXT_COLOR //цвет пройденного круга
+    private var normalTextColor = NORMAL_TEXT_COLOR //цвет в обычном состоянии
+    private var lineColor = LINE_COLOR //цвет линии
+    private var textSize = TEXT_SIZE //размер текста
     private var contentText = emptyArray<String>() //указать текст
 
     private var lineView: View? = null

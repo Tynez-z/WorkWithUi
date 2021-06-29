@@ -8,7 +8,9 @@
         android:layout_height="match_parent"
         android:background="@color/background_color">
 
-        <include layout="@layout/toolbar_settings" />
+        <include
+            layout="@layout/toolbar_settings"
+            app:layout_constraintTop_toTopOf="@id/constraint_layout" />
 
         <TextView
             android:id="@+id/title"
@@ -85,25 +87,23 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_20dp"
+            android:visibility="invisible"
             android:text="@string/please_upload"
             app:layout_constraintStart_toStartOf="@+id/radio_group"
             app:layout_constraintTop_toBottomOf="@+id/radio_group" />
 
-        <!-- TODO: add to divider style  -->
         <ExpandableListView
             android:id="@+id/expendableListView"
+            style="@style/styleDivider"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginStart="@dimen/margin_20dp"
             android:layout_marginTop="@dimen/margin_10dp"
             android:layout_marginEnd="@dimen/margin_20dp"
-            android:background="@drawable/design_shape_list"
-            android:childDivider="@color/white"
-            android:divider="@color/background_color"
-            android:dividerHeight="3dp"
             android:fadingEdge="none"
             android:overScrollMode="never"
             android:scrollbars="none"
+            android:visibility="invisible"
             app:layout_constraintBottom_toTopOf="@id/btn_next"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -118,7 +118,6 @@
             android:layout_marginTop="@dimen/margin_25dp"
             android:layout_marginEnd="@dimen/margin_50dp"
             android:layout_marginBottom="@dimen/margin_20dp"
-            android:background="@drawable/design_button_next"
             android:text="@string/text_button_next"
             android:textAllCaps="false"
             app:layout_constraintBottom_toBottomOf="parent"
