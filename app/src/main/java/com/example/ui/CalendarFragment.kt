@@ -7,16 +7,17 @@ import androidx.navigation.fragment.findNavController
 import com.example.ui.databinding.FragmentCalendarBinding
 import kotlinx.android.synthetic.main.toolbar_settings.*
 
-class CalendarFragment : Fragment(R.layout.fragment_calendar) {
+//class CalendarFragment : BaseFragment<FragmentCalendarBinding>() {
 
-    //TODO use inside fun
-    lateinit var fragmentCalendarBinding: FragmentCalendarBinding
+    class CalendarFragment : BottomSheetFragment() {
+
+        override val layoutId: Int = R.layout.fragment_calendar
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        fragmentCalendarBinding = FragmentCalendarBinding.bind(view)
+
         back.setOnClickListener {
-            findNavController().navigate(R.id.action_calendarFragment_to_firstFragment)
+            getNavController().navigate(R.id.action_calendarFragment_to_firstFragment)
         }
     }
 }

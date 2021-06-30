@@ -4,14 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraint"
+        android:id="@+id/cl"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".BaanFragment">
 
         <include
+            android:id="@+id/tbSettings"
             layout="@layout/toolbar_settings"
-            app:layout_constraintTop_toTopOf="@id/constraint" />
+            app:layout_constraintTop_toTopOf="@id/cl" />
 
         <TextView
             style="@style/styleTextEmptyFragment"
@@ -19,6 +20,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@id/tbSettings" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

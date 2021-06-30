@@ -2,25 +2,23 @@ package com.example.ui
 
 import android.os.Bundle
 import android.view.View
-import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
 import com.example.ui.databinding.FragmentSecondBinding
 import kotlinx.android.synthetic.main.fragment_second.*
 import kotlinx.android.synthetic.main.toolbar_settings.*
 
-class SecondFragment : Fragment(R.layout.fragment_second) {
+class SecondFragment : BaseFragment<FragmentSecondBinding>() {
 
-    lateinit var secondFragmentBinding: FragmentSecondBinding
+    override val layoutId: Int = R.layout.fragment_second
+
     private lateinit var header: List<String>
     private lateinit var body: HashMap<String, List<String>>
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        secondFragmentBinding = FragmentSecondBinding.bind(view)
 
         stepBar.BarBuilder()
-                .build()
-                .init()
+            .build()
+            .init()
         showList()
 
         val listViewAdapter = ExpandableListAdapter(requireContext(), header, body)
@@ -28,8 +26,9 @@ class SecondFragment : Fragment(R.layout.fragment_second) {
 
         showExpandableList()
 
+
         back.setOnClickListener {
-            findNavController().navigate(R.id.action_secondFragment_to_firstFragment)
+            getNavController().navigate(R.id.action_secondFragment_to_firstFragment)
         }
 
         //TODO add work with close icon
@@ -68,7 +67,7 @@ class SecondFragment : Fragment(R.layout.fragment_second) {
 
     //TODO make with binding in layout
     private fun showExpandableList () {
-        secondFragmentBinding.apply {
+        getViewDataBinding().apply {
             rb_yes.setOnClickListener {
                 expendableListView.visibility = View.VISIBLE
                 upload.visibility = View.VISIBLE

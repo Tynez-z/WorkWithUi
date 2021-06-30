@@ -2,21 +2,19 @@ package com.example.ui
 
 import android.os.Bundle
 import android.view.View
-import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
-import com.example.ui.databinding.FragmentFirstBinding
 import kotlinx.android.synthetic.main.toolbar_profile.*
 
-class FirstFragment : Fragment(R.layout.fragment_first) {
+class FirstFragment : BottomSheetFragment() {
 
-    lateinit var fragmentFirstBinding: FragmentFirstBinding
+    override val layoutId: Int = R.layout.fragment_first
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        fragmentFirstBinding = FragmentFirstBinding.bind(view)
+
+//        getViewDataBinding().bottomNavigationView.setupWithNavController((getNavController()))
 
         settings.setOnClickListener {
-            findNavController().navigate(R.id.action_firstFragment_to_secondFragment)
+            getNavController().navigate(R.id.action_firstFragment_to_secondFragment)
         }
     }
 }
