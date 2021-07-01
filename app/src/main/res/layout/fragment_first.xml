@@ -14,7 +14,7 @@
                 android:background="@color/background_color">
 
                 <include
-                    android:id="@+id/tbSettings"
+                    android:id="@+id/toolbarProfile"
                     layout="@layout/toolbar_profile"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -23,7 +23,7 @@
                     layout="@layout/profile"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:layout_constraintTop_toBottomOf="@id/tbSettings" />
+                    app:layout_constraintTop_toBottomOf="@id/toolbarProfile" />
 
                 <GridLayout
                     android:id="@+id/glFirstFragment"
@@ -44,19 +44,19 @@
                         style="@style/cvStyleLeft"
                         android:layout_row="0">
 
-                        <LinearLayout style="@style/llCard">
-
                             <ImageView
                                 android:id="@+id/ivHealthRecords"
-                                android:layout_width="@dimen/width_img"
-                                android:layout_height="@dimen/height_img"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/margin_35dp"
                                 android:contentDescription="@string/icon_health_records"
                                 android:src="@drawable/ic_medical_report" />
 
                         <TextView
                             style="@style/tvStyleIv"
+                            android:layout_marginTop="@dimen/margin_100dp"
+                            android:layout_marginStart="@dimen/margin_35dp"
                             android:text="@string/my_health_records" />
-                    </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
