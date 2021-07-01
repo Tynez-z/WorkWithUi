@@ -1,5 +1,6 @@
 package com.example.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import com.example.ui.databinding.FragmentSecondBinding
@@ -9,6 +10,7 @@ import kotlinx.android.synthetic.main.toolbar_settings.*
 class SecondFragment : BaseFragment<FragmentSecondBinding>() {
 
     override val layoutId: Int = R.layout.fragment_second
+    override var bottomNavigationViewVisibility = View.GONE
 
     private lateinit var header: List<String>
     private lateinit var body: HashMap<String, List<String>>
@@ -17,21 +19,28 @@ class SecondFragment : BaseFragment<FragmentSecondBinding>() {
         super.onViewCreated(view, savedInstanceState)
 
         stepBar.BarBuilder()
-            .build()
-            .init()
+                .build()
+                .init()
         showList()
 
         val listViewAdapter = ExpandableListAdapter(requireContext(), header, body)
-        expendableListView.setAdapter(listViewAdapter)
+        expListView.setAdapter(listViewAdapter)
 
         showExpandableList()
 
-
-        back.setOnClickListener {
-            getNavController().navigate(R.id.action_secondFragment_to_firstFragment)
+        getViewDataBinding().apply {
+            ivBackBaseTb.setOnClickListener {
+                getNavController().navigate(R.id.action_secondFragment_to_firstFragment)
+            }
         }
 
-        //TODO add work with close icon
+        getViewDataBinding().apply {
+            ivCancelSettingsTb.setOnClickListener {
+                val intent = Intent(requireContext(), MainActivity::class.java)
+                startActivity(intent)
+                requireActivity().finish()
+            }
+        }
     }
 
     private fun showList() {
@@ -65,17 +74,18 @@ class SecondFragment : BaseFragment<FragmentSecondBinding>() {
         body[header[8]] = bodyEmpty
     }
 
-    //TODO make with binding in layout
     private fun showExpandableList () {
         getViewDataBinding().apply {
-            rb_yes.setOnClickListener {
-                expendableListView.visibility = View.VISIBLE
-                upload.visibility = View.VISIBLE
+            btnYes.setOnClickListener {
+                expListView.makeVisible()
+                tvUpload.makeVisible()
+                isClick = true
             }
 
-            rb_no.setOnClickListener {
-                expendableListView.visibility = View.INVISIBLE
-                upload.visibility = View.INVISIBLE
+            btnNo.setOnClickListener {
+                expListView.makeInvisible()
+                tvUpload.makeInvisible()
+                isClick = false
             }
         }
     }

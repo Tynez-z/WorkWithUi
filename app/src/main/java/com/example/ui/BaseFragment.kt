@@ -16,25 +16,27 @@ abstract class BaseFragment<T : ViewDataBinding> : Fragment() {
     abstract val layoutId: Int
     private lateinit var mRootView: View
     private lateinit var navController: NavController
+    protected open var bottomNavigationViewVisibility = View.VISIBLE
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         navController = Navigation.findNavController(view)
-
-//        getNavController().addOnDestinationChangedListener { _, destination, _ ->
-//            when (destination.id) {
-//                R.id.secondFragment -> hideBottomNav()
-//                else -> showBottomNav()
-//            }
-//        }
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+            inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
         viewDataBinding = DataBindingUtil.inflate(inflater, layoutId, container, false)
         mRootView = viewDataBinding.root
         return mRootView
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        if (activity is MainActivity) {
+            val mainActivity = activity as MainActivity
+            mainActivity.setBottomNavigationVisibility(bottomNavigationViewVisibility)
+        }
     }
 
     fun getViewDataBinding(): T {
@@ -44,15 +46,4 @@ abstract class BaseFragment<T : ViewDataBinding> : Fragment() {
     fun getNavController(): NavController {
         return navController
     }
-
-//    private fun hideBottomNav() {
-//        requireActivity().bottomNavigationView?.visibility = View.INVISIBLE
-//    }
-//
-//    private fun showBottomNav() {
-//        requireActivity().bottomNavigationView?.visibility = View.VISIBLE
-//    }
 }
-
-
-

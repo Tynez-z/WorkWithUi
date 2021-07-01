@@ -19,7 +19,7 @@
         <item name="android:textColor">@color/teal_700</item>
     </style>
 
-    <style name="textImage">
+    <style name="tvStyleIv">
         <item name="android:textSize">12sp</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textColor">@color/text_grey</item>
@@ -59,7 +59,7 @@
         <item name="android:textColor">@color/text_upload</item>
     </style>
 
-    <style name="textChildList">
+    <style name="tvStyleChildList">
         <item name="android:textSize">12sp</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textColor">@color/text_upload</item>
@@ -71,7 +71,7 @@
         <item name="android:textColor">@color/text_upload</item>
     </style>
 
-    <style name="styleCardViewLeft">
+    <style name="cvStyleLeft">
         <item name="android:layout_width">@dimen/width_card</item>
         <item name="android:layout_height">@dimen/height_card</item>
         <item name="android:layout_rowWeight">1</item>
@@ -87,7 +87,7 @@
         <item name="cardElevation">@dimen/size_0dp</item>
     </style>
 
-    <style name="styleCardViewRight">
+    <style name="cvStyleRight">
         <item name="android:layout_width">@dimen/width_card</item>
         <item name="android:layout_height">@dimen/height_card</item>
         <item name="android:layout_rowWeight">1</item>
@@ -103,7 +103,7 @@
         <item name="cardElevation">@dimen/size_0dp</item>
     </style>
 
-    <style name="linearForCard">
+    <style name="llCard">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_gravity">center_vertical|center_horizontal</item>
@@ -111,7 +111,7 @@
         <item name="android:orientation">vertical</item>
     </style>
 
-    <style name="styleTextEmptyFragment">
+    <style name="tvStyleEmpty">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">14sp</item>

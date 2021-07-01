@@ -2,14 +2,13 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/constraint"
+    android:id="@+id/cl"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- TODO use universal size (match/wrap/0dp) and rename views-->
     <TextView
-        android:id="@+id/tv_title"
-        style="@style/textChildList"
+        android:id="@+id/tvTitleChild"
+        style="@style/tvStyleChildList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_5dp"
@@ -18,34 +17,36 @@
         android:paddingStart="@dimen/padding_35dp"
         android:paddingEnd="@dimen/padding_35dp"
         tools:text="@string/example_for_child"
-        app:layout_constraintTop_toTopOf="@id/constraint" />
+        app:layout_constraintTop_toTopOf="@id/cl" />
 
     <ImageView
+        android:id="@+id/ivFile"
         android:layout_width="@dimen/size_18dp"
         android:layout_height="@dimen/size_18dp"
         android:layout_marginStart="@dimen/margin_10dp"
         android:layout_marginTop="@dimen/margin_5dp"
         android:background="@drawable/design_shape_group"
         android:src="@drawable/ic_file"
-        app:layout_constraintStart_toStartOf="@id/tv_title"
-        app:layout_constraintTop_toTopOf="@id/constraint"
+        app:layout_constraintStart_toStartOf="@id/tvTitleChild"
+        app:layout_constraintTop_toTopOf="@id/cl"
         android:contentDescription="@string/icon_file" />
 
     <ImageView
+        android:id="@+id/ivDelete"
         android:layout_width="@dimen/size_18dp"
         android:layout_height="@dimen/size_18dp"
         android:layout_marginTop="@dimen/margin_5dp"
         android:src="@drawable/ic_trash"
-        app:layout_constraintEnd_toEndOf="@id/tv_title"
+        app:layout_constraintEnd_toEndOf="@id/tvTitleChild"
         app:layout_constraintTop_toTopOf="parent"
         android:contentDescription="@string/icon_trash" />
 
     <View
-        android:id="@+id/space"
+        android:id="@+id/vSpace"
         android:layout_width="match_parent"
         android:layout_height="@dimen/size_8dp"
         android:background="@android:color/transparent"
-        app:layout_constraintTop_toBottomOf="@id/tv_title" />
+        app:layout_constraintTop_toBottomOf="@id/tvTitleChild" />
 
     <View
         android:layout_width="match_parent"
@@ -57,5 +58,5 @@
         android:background="@drawable/shape_divider_item_list"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/space" />
+        app:layout_constraintTop_toBottomOf="@id/vSpace" />
 </androidx.constraintlayout.widget.ConstraintLayout>

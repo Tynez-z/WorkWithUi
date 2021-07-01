@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseExpandableListAdapter
+import kotlinx.android.synthetic.main.layout_child.view.*
 import kotlinx.android.synthetic.main.layout_group.view.*
 
 class ExpandableListAdapter(
@@ -44,7 +45,7 @@ class ExpandableListAdapter(
             mConvertView = inflater.inflate(R.layout.layout_group, null)
         }
 
-        val headerTv = mConvertView!!.tv_title
+        val headerTv = mConvertView!!.tvTitleGroup
         headerTv.text = headerTitle
         return mConvertView
     }
@@ -61,7 +62,7 @@ class ExpandableListAdapter(
             val inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
             mConvertView = inflater.inflate(R.layout.layout_child, null)
         }
-        val bodyTv = mConvertView!!.tv_title
+        val bodyTv = mConvertView!!.tvTitleChild
         bodyTv.text = bodyTitle
         return mConvertView
     }

@@ -4,12 +4,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/constraint">
+    android:id="@+id/cl">
 
-    <!-- TODO use universal size (match/wrap/0dp) and rename views-->
-    <!-- TODO ImageView - not ImageView ) -->
     <ImageView
-        android:id="@+id/back"
+        android:id="@+id/ivBackBaseTb"
         android:layout_width="@dimen/size_18dp"
         android:layout_height="@dimen/size_18dp"
         android:layout_marginTop="@dimen/margin_20dp"
@@ -20,8 +18,21 @@
         app:layout_constraintTop_toTopOf="parent"
         android:contentDescription="@string/icon_go_to_back" />
 
+    <TextView
+        android:id="@+id/tvMedicalRecords"
+        style="@style/styleNameTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_20dp"
+        android:gravity="center"
+        android:text="@string/medical_records"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/ivCancelSettingsTb"
+        app:layout_constraintStart_toEndOf="@+id/ivBackBaseTb"
+        app:layout_constraintTop_toTopOf="@id/cl" />
+
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/ivCancelSettingsTb"
         android:layout_width="@dimen/size_15dp"
         android:layout_height="@dimen/size_15dp"
         android:layout_marginStart="@dimen/margin_60dp"

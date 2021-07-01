@@ -4,9 +4,8 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <!-- TODO use universal size (match/wrap/0dp) and rename views-->
     <ImageView
-        android:id="@+id/imageViewProfile"
+        android:id="@+id/ivProfile"
         android:layout_width="@dimen/width_img_profile"
         android:layout_height="@dimen/height_img_profile"
         android:layout_marginStart="@dimen/margin_35dp"
@@ -18,43 +17,43 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/name"
+        android:id="@+id/tvNameUser"
         style="@style/boldStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_20dp"
         android:layout_marginTop="@dimen/margin_5dp"
-        android:layout_toEndOf="@+id/imageViewProfile"
+        android:layout_toEndOf="@+id/ivProfile"
         android:text="@string/name_user_profile"
-        app:layout_constraintStart_toEndOf="@id/imageViewProfile"
+        app:layout_constraintStart_toEndOf="@id/ivProfile"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/number"
+        android:id="@+id/tvNumberUser"
         style="@style/normallyStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_20dp"
         android:layout_marginTop="@dimen/margin_5dp"
-        android:layout_toEndOf="@+id/imageViewProfile"
+        android:layout_toEndOf="@+id/ivProfile"
         android:text="@string/number_mobile"
-        app:layout_constraintStart_toEndOf="@+id/imageViewProfile"
-        app:layout_constraintTop_toBottomOf="@+id/name" />
+        app:layout_constraintStart_toEndOf="@+id/ivProfile"
+        app:layout_constraintTop_toBottomOf="@+id/tvNameUser" />
 
     <TextView
-        android:id="@+id/membership_id"
+        android:id="@+id/tvMembershipId"
         style="@style/normallyStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_20dp"
         android:layout_marginTop="@dimen/margin_5dp"
-        android:layout_toEndOf="@+id/imageViewProfile"
+        android:layout_toEndOf="@+id/ivProfile"
         android:text="@string/membership_id"
-        app:layout_constraintStart_toEndOf="@+id/imageViewProfile"
-        app:layout_constraintTop_toBottomOf="@+id/number" />
+        app:layout_constraintStart_toEndOf="@+id/ivProfile"
+        app:layout_constraintTop_toBottomOf="@+id/tvNumberUser" />
 
     <ImageView
-        android:id="@+id/img_camera"
+        android:id="@+id/ivCamera"
         android:layout_width="@dimen/width_img_camera"
         android:layout_height="@dimen/height_img_camera"
         android:layout_marginStart="@dimen/margin_88dp"
@@ -63,27 +62,27 @@
         android:contentDescription="@string/icon_camera"
         android:padding="@dimen/padding_2dp"
         android:src="@drawable/ic_camera"
-        app:layout_constraintBottom_toBottomOf="@+id/imageViewProfile"
+        app:layout_constraintBottom_toBottomOf="@+id/ivProfile"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/personal_details"
+        android:id="@+id/tvPersonalDetails"
         style="@style/colorStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_20dp"
         android:layout_marginTop="@dimen/margin_15dp"
         android:text="@string/personal_details"
-        app:layout_constraintStart_toEndOf="@+id/imageViewProfile"
-        app:layout_constraintTop_toBottomOf="@+id/membership_id" />
+        app:layout_constraintStart_toEndOf="@+id/ivProfile"
+        app:layout_constraintTop_toBottomOf="@+id/tvMembershipId" />
 
     <View
-        android:id="@+id/line"
+        android:id="@+id/vLine"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/size_2dp"
         android:layout_marginTop="@dimen/margin_15dp"
         android:background="@drawable/shape_divider"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/personal_details" />
+        app:layout_constraintTop_toBottomOf="@id/tvPersonalDetails" />
 </androidx.constraintlayout.widget.ConstraintLayout>

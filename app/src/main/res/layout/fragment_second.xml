@@ -2,29 +2,23 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <!-- TODO use universal size (match/wrap/0dp) and rename views-->
+    <data>
+        <import type="com.example.ui.ConstantsKt" />
+        <variable
+            name="isClick"
+            type="Boolean" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraint_layout"
+        android:id="@+id/clSecondFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/background_color">
 
         <include
+            android:id="@id/tbSecondFragment"
             layout="@layout/toolbar_settings"
-            app:layout_constraintTop_toTopOf="@id/constraint_layout" />
-
-        <!-- TODO use in baseToolbar and use binding (visibility) -->
-        <TextView
-            android:id="@+id/title"
-            style="@style/styleNameTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_20dp"
-            android:gravity="center"
-            android:text="@string/medical_records"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/constraint_layout" />
+            app:layout_constraintTop_toTopOf="@id/clSecondFragment" />
 
         <com.example.ui.StepBar
             android:id="@+id/stepBar"
@@ -33,10 +27,10 @@
             android:layout_marginTop="@dimen/margin_20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/title" />
+            app:layout_constraintTop_toBottomOf="@+id/tbSecondFragment" />
 
         <TextView
-            android:id="@+id/question"
+            android:id="@+id/tvQuestion"
             style="@style/boldStyleTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -47,56 +41,42 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/stepBar" />
 
-        <!-- TODO use buttons and binding + extension fun -->
-        <RadioGroup
-            android:id="@+id/radio_group"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_20dp"
-            android:orientation="horizontal"
-            app:layout_constraintStart_toStartOf="@+id/question"
-            app:layout_constraintTop_toBottomOf="@id/question">
-
-            <RadioButton
-                android:id="@+id/rb_no"
-                style="@style/styleRadioButton"
-                android:layout_width="@dimen/size_80dp"
-                android:layout_height="@dimen/size_40dp"
-                android:background="@drawable/radio_selector"
-                android:button="@android:color/transparent"
-                android:padding="@dimen/padding_5dp"
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnNo"
                 android:text="@string/no"
-                android:textAlignment="center"
-                android:textColor="@drawable/design_text" />
+                android:textAllCaps="false"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="@dimen/margin_8dp"
+                android:layout_height="@dimen/size_43dp"
+                app:layout_constraintStart_toStartOf="@+id/tvQuestion"
+                app:layout_constraintTop_toBottomOf="@id/tvQuestion"
+                app:question_no_button="@{isClick ? ConstantsKt.BUTTON_BLUE : ConstantsKt.BUTTON_GREY}" />
 
-            <RadioButton
-                android:id="@+id/rb_yes"
-                android:layout_width="@dimen/size_80dp"
-                android:layout_height="@dimen/size_40dp"
-                android:layout_marginStart="@dimen/margin_10dp"
-                android:background="@drawable/radio_selector"
-                android:button="@android:color/transparent"
-                android:padding="@dimen/padding_5dp"
-                android:text="@string/yes"
-                android:textAlignment="center"
-                android:textColor="@drawable/design_text"
-                android:textSize="@dimen/text_size_button"
-                android:textStyle="bold" />
-        </RadioGroup>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnYes"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/size_43dp"
+            android:layout_marginTop="@dimen/margin_8dp"
+            android:layout_marginStart="@dimen/margin_8dp"
+            android:text="@string/yes"
+            android:textAllCaps="false"
+            app:layout_constraintStart_toEndOf="@+id/btnNo"
+            app:layout_constraintTop_toBottomOf="@id/tvQuestion"
+            app:question_no_button="@{isClick ? ConstantsKt.BUTTON_GREY : ConstantsKt.BUTTON_BLUE}" />
 
         <TextView
-            android:id="@+id/upload"
+            android:id="@+id/tvUpload"
             style="@style/styleTextUpload"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_20dp"
             android:visibility="invisible"
             android:text="@string/please_upload"
-            app:layout_constraintStart_toStartOf="@+id/radio_group"
-            app:layout_constraintTop_toBottomOf="@+id/radio_group" />
+            app:layout_constraintStart_toStartOf="@+id/btnNo"
+            app:layout_constraintTop_toBottomOf="@+id/btnNo" />
 
         <ExpandableListView
-            android:id="@+id/expendableListView"
+            android:id="@+id/expListView"
             style="@style/styleDivider"
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -107,13 +87,13 @@
             android:overScrollMode="never"
             android:scrollbars="none"
             android:visibility="invisible"
-            app:layout_constraintBottom_toTopOf="@id/btn_next"
+            app:layout_constraintBottom_toTopOf="@id/btnNext"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/upload" />
+            app:layout_constraintTop_toBottomOf="@id/tvUpload" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_next"
+            android:id="@+id/btnNext"
             style="@style/styleButtonNext"
             android:layout_width="match_parent"
             android:layout_height="@dimen/size_43dp"
@@ -126,6 +106,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/expendableListView" />
+            app:layout_constraintTop_toBottomOf="@id/expListView" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

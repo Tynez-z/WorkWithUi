@@ -27,6 +27,12 @@ abstract class BaseActivity<T : ViewDataBinding> : AppCompatActivity() {
         return mViewDataBinding
     }
 
+    fun getNavController(): NavController {
+        return navController
+    }
+}
+
+
 //    private fun hideBottomNav() {
 //        this.bottomNavigationView.visibility = View.INVISIBLE
 //    }
@@ -35,7 +41,13 @@ abstract class BaseActivity<T : ViewDataBinding> : AppCompatActivity() {
 //        this.bottomNavigationView.visibility = View.VISIBLE
 //    }
 
-    fun getNavController(): NavController {
-        return navController
-    }
-}
+//        val navHostFragment = supportFragmentManager.findFragmentById(R.id.navHostFragment) as NavHostFragment
+//        val navController = navHostFragment.navController
+
+//        getNavController().addOnDestinationChangedListener { _, destination, _ ->
+//            when (destination.id) {
+//                R.id.secondFragment -> hideBottomNav()
+//                R.id.baanFragment -> hideBottomNav()
+//                else -> showBottomNav()
+//            }
+//        }

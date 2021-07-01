@@ -21,3 +21,7 @@ const val M_STEP_COUNT: Int = 7
 const val M_LINE_WIDTH: Int = 10
 const val M_LINE_HEIGHT: Int = 2
 const val M_TEXT_SIZE: Int = 13
+
+//buttons
+const val BUTTON_BLUE = "Blue"
+const val BUTTON_GREY = "Grey"
