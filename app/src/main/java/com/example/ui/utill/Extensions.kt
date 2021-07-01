@@ -22,10 +22,6 @@ fun Button.setVisibilityOfNoClick(type: String?) {
     )
 }
 
-fun View.makeVisible() {
-    visibility = View.VISIBLE
-}
+fun View.makeVisible() { visibility = View.VISIBLE }
 
-fun View.makeInvisible() {
-    visibility = View.INVISIBLE
-}
+fun View.makeInvisible() { visibility = View.INVISIBLE }

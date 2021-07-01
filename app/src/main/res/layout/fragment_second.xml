@@ -20,7 +20,7 @@
             layout="@layout/toolbar_settings"
             app:layout_constraintTop_toTopOf="@id/clSecondFragment" />
 
-        <com.example.ui.StepBar
+        <com.example.ui.common.StepBar
             android:id="@+id/stepBar"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/size_50dp"

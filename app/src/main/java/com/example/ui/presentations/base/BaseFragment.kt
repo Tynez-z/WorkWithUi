@@ -1,4 +1,4 @@
-package com.example.ui
+package com.example.ui.presentations.base
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,6 +9,7 @@ import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import com.example.ui.presentations.activities.MainActivity
 
 abstract class BaseFragment<T : ViewDataBinding> : Fragment() {
 

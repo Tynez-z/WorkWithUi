@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/firstFragment"
-        android:name="com.example.ui.FirstFragment"
+        android:name="com.example.ui.presentations.fragments.FirstFragment"
         android:label="fragment_first"
         tools:layout="@layout/fragment_first" >
         <action
@@ -48,7 +48,7 @@
     </fragment>
     <fragment
         android:id="@+id/secondFragment"
-        android:name="com.example.ui.SecondFragment"
+        android:name="com.example.ui.presentations.fragments.SecondFragment"
         android:label="fragment_second"
         tools:layout="@layout/fragment_second" >
         <action
@@ -61,7 +61,7 @@
     </fragment>
     <fragment
         android:id="@+id/baanFragment"
-        android:name="com.example.ui.BaanFragment"
+        android:name="com.example.ui.presentations.fragments.BaanFragment"
         android:label="BaanFragment">
         <action
             android:id="@+id/action_baanFragment_to_firstFragment"
@@ -73,7 +73,7 @@
     </fragment>
     <fragment
         android:id="@+id/educationFragment"
-        android:name="com.example.ui.EducationFragment"
+        android:name="com.example.ui.presentations.fragments.EducationFragment"
         android:label="fragment_education"
         tools:layout="@layout/fragment_education">
         <action
@@ -86,7 +86,7 @@
     </fragment>
     <fragment
         android:id="@+id/calendarFragment"
-        android:name="com.example.ui.CalendarFragment"
+        android:name="com.example.ui.presentations.fragments.CalendarFragment"
         android:label="fragment_calendar"
         tools:layout="@layout/fragment_calendar">
         <action
@@ -99,7 +99,7 @@
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.ui.HomeFragment"
+        android:name="com.example.ui.presentations.fragments.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home">
         <action

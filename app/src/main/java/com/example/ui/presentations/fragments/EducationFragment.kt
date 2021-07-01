@@ -1,9 +1,12 @@
-package com.example.ui
+package com.example.ui.presentations.fragments
 
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import com.example.ui.presentations.base.BaseFragment
+import com.example.ui.R
 import com.example.ui.databinding.FragmentEducationBinding
+import com.example.ui.presentations.activities.MainActivity
 import kotlinx.android.synthetic.main.toolbar_base.*
 import kotlinx.android.synthetic.main.toolbar_settings.ivBackBaseTb
 

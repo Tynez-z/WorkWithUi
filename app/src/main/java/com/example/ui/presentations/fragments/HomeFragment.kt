@@ -1,22 +1,25 @@
-package com.example.ui
+package com.example.ui.presentations.fragments
 
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import com.example.ui.databinding.FragmentCalendarBinding
+import com.example.ui.presentations.base.BaseFragment
+import com.example.ui.R
+import com.example.ui.databinding.FragmentHomeBinding
+import com.example.ui.presentations.activities.MainActivity
 import kotlinx.android.synthetic.main.toolbar_base.*
 import kotlinx.android.synthetic.main.toolbar_settings.ivBackBaseTb
 
-class CalendarFragment : BaseFragment<FragmentCalendarBinding>() {
+class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
-    override val layoutId: Int = R.layout.fragment_calendar
+    override val layoutId: Int = R.layout.fragment_home
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         getViewDataBinding().apply {
             ivBackBaseTb.setOnClickListener {
-                getNavController().navigate(R.id.action_calendarFragment_to_firstFragment)
+                getNavController().navigate(R.id.action_homeFragment_to_firstFragment)
             }
         }
 

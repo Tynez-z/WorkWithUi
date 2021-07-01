@@ -1,4 +1,4 @@
-package com.example.ui
+package com.example.ui.presentations.base
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -31,23 +31,3 @@ abstract class BaseActivity<T : ViewDataBinding> : AppCompatActivity() {
         return navController
     }
 }
-
-
-//    private fun hideBottomNav() {
-//        this.bottomNavigationView.visibility = View.INVISIBLE
-//    }
-//
-//    private fun showBottomNav() {
-//        this.bottomNavigationView.visibility = View.VISIBLE
-//    }
-
-//        val navHostFragment = supportFragmentManager.findFragmentById(R.id.navHostFragment) as NavHostFragment
-//        val navController = navHostFragment.navController
-
-//        getNavController().addOnDestinationChangedListener { _, destination, _ ->
-//            when (destination.id) {
-//                R.id.secondFragment -> hideBottomNav()
-//                R.id.baanFragment -> hideBottomNav()
-//                else -> showBottomNav()
-//            }
-//        }

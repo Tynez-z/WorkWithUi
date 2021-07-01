@@ -1,8 +1,10 @@
-package com.example.ui
+package com.example.ui.presentations.activities
 
 import android.os.Bundle
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
+import com.example.ui.presentations.base.BaseActivity
+import com.example.ui.R
 import com.example.ui.databinding.ActivityMainBinding
 
 class MainActivity : BaseActivity<ActivityMainBinding>() {
@@ -21,18 +23,3 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
     override fun getLayoutId(): Int = R.layout.activity_main
 }
-
-//    private fun hideBottomNav() {
-//        getViewDataBinding().bottomNavigationView.visibility = View.GONE
-//    }
-//
-//    private fun showBottomNav() {
-//        getViewDataBinding().bottomNavigationView.visibility = View.VISIBLE
-//    }
-
-//        getNavController().addOnDestinationChangedListener { _, destination, _ ->
-//            when (destination.id) {
-//                R.id.secondFragment -> hideBottomNav()
-//                else -> showBottomNav()
-//            }
-//        }

@@ -1,9 +1,13 @@
-package com.example.ui
+package com.example.ui.presentations.fragments
 
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import com.example.ui.*
+import com.example.ui.adapters.ExpandableListAdapter
 import com.example.ui.databinding.FragmentSecondBinding
+import com.example.ui.presentations.activities.MainActivity
+import com.example.ui.presentations.base.BaseFragment
 import kotlinx.android.synthetic.main.fragment_second.*
 import kotlinx.android.synthetic.main.toolbar_settings.*
 

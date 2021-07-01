@@ -1,9 +1,11 @@
-package com.example.ui
+package com.example.ui.presentations.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.ui.presentations.base.BaseFragment
+import com.example.ui.R
 import com.example.ui.databinding.FragmentBottomSheetBinding
 
 abstract class BottomSheetFragment : BaseFragment<FragmentBottomSheetBinding>() {

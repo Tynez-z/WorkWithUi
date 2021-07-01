@@ -1,4 +1,4 @@
-package com.example.ui
+package com.example.ui.common
 
 import android.content.Context
 import android.util.AttributeSet
@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
+import com.example.ui.*
 
 class StepBar : LinearLayout {
 
