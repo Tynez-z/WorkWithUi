@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- TODO rename cl - Are you mister Mask?  what is crazy name? why? -->
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -6,6 +7,7 @@
     android:layout_height="wrap_content"
     android:id="@+id/cl">
 
+    <!-- TODO use universal size -->
     <ImageView
         android:id="@+id/ivBackBaseTb"
         android:layout_width="@dimen/size_18dp"
@@ -18,6 +20,7 @@
         app:layout_constraintTop_toTopOf="parent"
         android:contentDescription="@string/icon_go_to_back" />
 
+    <!-- TODO use universal size -->
     <TextView
         android:id="@+id/tvMedicalRecords"
         style="@style/styleNameTitle"
@@ -31,6 +34,7 @@
         app:layout_constraintStart_toEndOf="@+id/ivBackBaseTb"
         app:layout_constraintTop_toTopOf="@id/cl" />
 
+    <!-- TODO use universal size -->
     <ImageView
         android:id="@+id/ivCancelSettingsTb"
         android:layout_width="@dimen/size_15dp"

@@ -31,23 +31,21 @@ class ExpandableListAdapter(
     override fun hasStableIds() = false
 
     override fun getGroupView(
-            groupPosition: Int,
-            isExpanded: Boolean,
-            convertView: View?,
-            parent: ViewGroup?
+        groupPosition: Int,
+        isExpanded: Boolean,
+        convertView: View?,
+        parent: ViewGroup?
     ): View {
 
         var mConvertView = convertView
         val headerTitle = getGroup(groupPosition)
 
         if (mConvertView == null) {
-            val inflater =
-                    context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+            val inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
             mConvertView = inflater.inflate(R.layout.layout_group, null)
         }
 
-        val headerTv = mConvertView!!.tvTitleGroup
-        headerTv.text = headerTitle
+        mConvertView!!.tvTitleGroup.text = headerTitle
         return mConvertView
     }
 
@@ -63,8 +61,8 @@ class ExpandableListAdapter(
             val inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
             mConvertView = inflater.inflate(R.layout.layout_child, null)
         }
-        val bodyTv = mConvertView!!.tvTitleChild
-        bodyTv.text = bodyTitle
+
+        mConvertView!!.tvTitleChild.text = bodyTitle
         return mConvertView
     }
 

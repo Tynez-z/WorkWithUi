@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- TODO rename constraint!  constraint from what? -->
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/constraint"
@@ -20,6 +22,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/constraint" />
 
+    <!-- TODO use universal size -->
     <ImageView
         android:id="@+id/ivAdd"
         android:layout_width="@dimen/size_18dp"

@@ -1,4 +1,4 @@
-package com.example.ui
+package com.example.ui  //TODO replace package
 
 //For adapter
 const val CT_SCAN = "CT Scan"

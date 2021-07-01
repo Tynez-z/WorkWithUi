@@ -33,7 +33,7 @@ abstract class BaseFragment<T : ViewDataBinding> : Fragment() {
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
+        super.onActivityCreated(savedInstanceState) //TODO replace deprecated method. Only hardcore
         if (activity is MainActivity) {
             val mainActivity = activity as MainActivity
             mainActivity.setBottomNavigationVisibility(bottomNavigationViewVisibility)

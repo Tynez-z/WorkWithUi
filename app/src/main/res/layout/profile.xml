@@ -4,6 +4,7 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <!-- TODO use universal size -->
     <ImageView
         android:id="@+id/ivProfile"
         android:layout_width="@dimen/width_img_profile"
@@ -52,6 +53,7 @@
         app:layout_constraintStart_toEndOf="@+id/ivProfile"
         app:layout_constraintTop_toBottomOf="@+id/tvNumberUser" />
 
+    <!-- TODO use universal size -->
     <ImageView
         android:id="@+id/ivCamera"
         android:layout_width="@dimen/width_img_camera"

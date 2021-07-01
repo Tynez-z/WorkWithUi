@@ -27,6 +27,13 @@ class StepBar : LinearLayout {
         const val TEXT_SIZE: Int = 13
     }
 
+    //TODO use documentation in view /** **/
+    /**
+     * для чего используюется - все на английском языке
+     *
+     * описываешь все константы mCurrentBackground - текущий фон круга ...
+     * и удалить остальные
+     */
     private var mCurrentBackground: Int = R.drawable.shape_current //текущий фон круга
     private var mPassedBackground: Int = R.drawable.shape_normal //фон пройденного круга
     private var mNormalBackground: Int = R.drawable.shape_failed //фон обычный
@@ -57,7 +64,7 @@ class StepBar : LinearLayout {
             .toInt()
     }
 
-    //создание
+    //создание //TODO use documentation
     fun init() {
         orientation = HORIZONTAL
         gravity = Gravity.CENTER_VERTICAL
@@ -109,7 +116,7 @@ class StepBar : LinearLayout {
         }
     }
 
-    //для вызова в активити/фрагмент
+    //для вызова в активити/фрагмент  //TODO use documentation
     fun setData(barBuilder: BarBuilder) {
         mCurrentBackground = barBuilder.mCurrentBackground
         mPassedBackground = barBuilder.mPassedBackground
@@ -130,7 +137,7 @@ class StepBar : LinearLayout {
         contentText = barBuilder.contentText
     }
 
-    //для билдера
+    //для билдера //TODO use documentation
     inner class BarBuilder {
         var mCurrentBackground: Int = R.drawable.shape_current //текущий
         var mPassedBackground: Int = R.drawable.ic_check_mark //пройденное
@@ -150,7 +157,7 @@ class StepBar : LinearLayout {
         var textSize: Int = M_TEXT_SIZE //размер текста
         var contentText = emptyArray<String>() //установить текст
 
-        //установка количества шагов
+        //установка количества шагов //TODO use documentation
         fun setUp(stepCount: Int, currentStep: Int): BarBuilder {
             mStepCount = stepCount
             if (currentStep > 0)
@@ -158,20 +165,20 @@ class StepBar : LinearLayout {
             return this
         }
 
-        //установка длины разделителя
+        //установка длины разделителя //TODO use documentation
         fun setLineWidth(width: Int, height: Int): BarBuilder {
             mLineWidth = width
             mLineHeight = height
             return this
         }
 
-        //установка текста
+        //установка текста //TODO use documentation
         fun setTextSize(size: Int): BarBuilder {
             textSize = size
             return this
         }
 
-        //установка цвета фона кругов
+        //установка цвета фона кругов //TODO use documentation
         fun setBackground(currentBg: Int, passedBg: Int, normalBg: Int): BarBuilder {
             mCurrentBackground = currentBg
             mPassedBackground = passedBg
@@ -179,26 +186,26 @@ class StepBar : LinearLayout {
             return this
         }
 
-        //установка размера кругов
+        //установка размера кругов //TODO use documentation
         fun setCircleWidth(currentWidth: Int, normalWidth: Int): BarBuilder {
             mCurrentWidth = currentWidth //длина текущего
             mNormalWidth = normalWidth //длина обычная
             return this
         }
 
-        //установка видимости разделителя
+        //установка видимости разделителя //TODO use documentation
         fun isShowLine(show: Boolean): BarBuilder {
             isShow = show
             return this
         }
 
-        //установка цвета линии
+        //установка цвета линии //TODO use documentation
         fun setLineColor(color: Int): BarBuilder {
             lineColor = color
             return this
         }
 
-        //установка текста
+        //установка текста //TODO use documentation
         fun setContent(content: Array<String>): BarBuilder {
             if (content.size != mStepCount)
                 return this
@@ -207,13 +214,13 @@ class StepBar : LinearLayout {
             return this
         }
 
-        //установка свободного места между кругами
+        //установка свободного места между кругами //TODO use documentation
         fun setSpace(space: Int): BarBuilder {
             mSpaceBetween = space
             return this
         }
 
-        //установка цвета текста
+        //установка цвета текста //TODO use documentation
         fun setTextColor(currentColor: Int, passColor: Int, normalColor: Int): BarBuilder {
             currentTextColor = currentColor
             passTextColor = passColor

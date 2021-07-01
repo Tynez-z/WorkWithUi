@@ -7,6 +7,7 @@ import com.example.ui.presentations.base.BaseActivity
 import com.example.ui.R
 import com.example.ui.databinding.ActivityMainBinding
 
+//TODO rename MainActivity to SingleActivity!
 class MainActivity : BaseActivity<ActivityMainBinding>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {

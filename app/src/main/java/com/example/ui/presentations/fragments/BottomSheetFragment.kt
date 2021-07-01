@@ -12,11 +12,13 @@ abstract class BottomSheetFragment : BaseFragment<FragmentBottomSheetBinding>() 
 
     override val layoutId: Int = R.layout.fragment_bottom_sheet
 
+    //TODO check for use
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 //        return super.onCreateView(inflater, container, savedInstanceState)
         return inflater.inflate(R.layout.fragment_bottom_sheet, container, false)
     }
 
+    //TODO remove
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 

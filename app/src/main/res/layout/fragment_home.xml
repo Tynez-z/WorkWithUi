@@ -3,16 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- TODO remove tools:context when it not use -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".presentations.fragments.HomeFragment">
 
+        <!-- TODO rename in toolbarBase -->
         <include
             android:id="@+id/tbBase"
             layout="@layout/toolbar_base"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <!-- TODO rename!  what is crazy name? why? -->
         <TextView
             style="@style/tvStyleEmpty"
             android:text="@string/home_text"

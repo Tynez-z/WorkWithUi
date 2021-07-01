@@ -1,4 +1,4 @@
-package com.example.ui
+package com.example.ui //TODO replace package
 
 import android.view.View
 import android.widget.Button
@@ -6,7 +6,7 @@ import androidx.appcompat.content.res.AppCompatResources.getDrawable
 import androidx.core.content.ContextCompat.getColor
 import androidx.databinding.BindingAdapter
 
-@BindingAdapter("question_no_button")
+@BindingAdapter("question_no_button") //TODO rename what is question_no_button
 fun Button.setVisibilityOfNoClick(type: String?) {
     background = when (type) {
         BUTTON_BLUE -> getDrawable(context, R.drawable.btn_normal)
@@ -23,5 +23,4 @@ fun Button.setVisibilityOfNoClick(type: String?) {
 }
 
 fun View.makeVisible() { visibility = View.VISIBLE }
-
 fun View.makeInvisible() { visibility = View.INVISIBLE }

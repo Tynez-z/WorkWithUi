@@ -11,6 +11,7 @@ import com.example.ui.presentations.base.BaseFragment
 import kotlinx.android.synthetic.main.fragment_second.*
 import kotlinx.android.synthetic.main.toolbar_settings.*
 
+//TODO rename this fragment
 class SecondFragment : BaseFragment<FragmentSecondBinding>() {
 
     override val layoutId: Int = R.layout.fragment_second
@@ -22,9 +23,10 @@ class SecondFragment : BaseFragment<FragmentSecondBinding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        //TODO use single fun in this fragment
         stepBar.BarBuilder()
-                .build()
-                .init()
+            .build()
+            .init()
         showList()
 
         val listViewAdapter = ExpandableListAdapter(requireContext(), header, body)
@@ -32,21 +34,21 @@ class SecondFragment : BaseFragment<FragmentSecondBinding>() {
 
         showExpandableList()
 
+        //TODO use single fun with binding!!
         getViewDataBinding().apply {
             ivBackBaseTb.setOnClickListener {
                 getNavController().navigate(R.id.action_secondFragment_to_firstFragment)
             }
         }
 
-        getViewDataBinding().apply {
-            ivCancelSettingsTb.setOnClickListener {
-                val intent = Intent(requireContext(), MainActivity::class.java)
-                startActivity(intent)
-                requireActivity().finish()
-            }
+        ivCancelSettingsTb.setOnClickListener {
+            val intent = Intent(requireContext(), MainActivity::class.java)
+            startActivity(intent)
+            requireActivity().finish()
         }
     }
 
+    //use custom data in this fun - mapping data
     private fun showList() {
         header = ArrayList()
         body = HashMap()
