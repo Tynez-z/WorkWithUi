@@ -7,18 +7,18 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import com.example.ui.BR
 import com.example.ui.R
-import com.example.ui.databinding.FragmentHomeBinding
+import com.example.ui.databinding.FragmentClinicBinding
 import com.example.ui.presentations.base.BaseFragment
 
-class HomeFragment : BaseFragment() {
+class ClinicFragment : BaseFragment() {
 
-    override val layoutId: Int = R.layout.fragment_home
-    private lateinit var fragmentHomeBinding: FragmentHomeBinding
+    override val layoutId: Int = R.layout.fragment_clinic
+    private lateinit var fragmentClinicBinding: FragmentClinicBinding
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        fragmentHomeBinding = DataBindingUtil.inflate(inflater, layoutId, container, false)
-        fragmentHomeBinding.setVariable(BR.homeFragment, this)
-        return fragmentHomeBinding.root
+        fragmentClinicBinding = DataBindingUtil.inflate(inflater, layoutId, container, false)
+        fragmentClinicBinding.setVariable(BR.clinicFragment, this)
+        return fragmentClinicBinding.root
     }
 }

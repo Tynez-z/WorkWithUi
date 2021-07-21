@@ -2,44 +2,44 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/news_nav_graph.xml"
-    app:startDestination="@id/firstFragment">
+    android:id="@+id/main"
+    app:startDestination="@id/clinicFragment">
 
     <fragment
-        android:id="@+id/firstFragment"
-        android:name="com.example.ui.presentations.fragments.FirstFragment"
-        android:label="fragment_first"
-        tools:layout="@layout/fragment_first" >
+        android:id="@+id/clinicFragment"
+        android:name="com.example.ui.presentations.fragments.ClinicFragment"
+        android:label="fragment_clinic"
+        tools:layout="@layout/fragment_clinic" >
         <action
-            android:id="@+id/action_firstFragment_to_secondFragment"
-            app:destination="@id/secondFragment"
+            android:id="@+id/action_clinicFragment_to_medicalRecordsFragment"
+            app:destination="@id/medicalRecordsFragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right"/>
         <action
-            android:id="@+id/action_firstFragment_to_baanFragment"
+            android:id="@+id/action_clinicFragment_to_baanFragment"
             app:destination="@id/baanFragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right"/>
         <action
-            android:id="@+id/action_firstFragment_to_educationFragment"
+            android:id="@+id/action_clinicFragment_to_educationFragment"
             app:destination="@id/educationFragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
         <action
-            android:id="@+id/action_firstFragment_to_calendarFragment"
+            android:id="@+id/action_clinicFragment_to_calendarFragment"
             app:destination="@id/calendarFragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right"/>
         <action
-            android:id="@+id/action_firstFragment_to_homeFragment"
+            android:id="@+id/action_clinicFragment_to_homeFragment"
             app:destination="@id/homeFragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
@@ -47,13 +47,13 @@
             app:popExitAnim="@anim/slide_out_right" />
     </fragment>
     <fragment
-        android:id="@+id/secondFragment"
-        android:name="com.example.ui.presentations.fragments.SecondFragment"
-        android:label="fragment_second"
-        tools:layout="@layout/fragment_second" >
+        android:id="@+id/medicalRecordsFragment"
+        android:name="com.example.ui.presentations.fragments.MedicalRecordsFragment"
+        android:label="medical_records_fragment"
+        tools:layout="@layout/fragment_medical_records" >
         <action
-            android:id="@+id/action_secondFragment_to_firstFragment"
-            app:destination="@id/firstFragment"
+            android:id="@+id/action_medicalRecordsFragment_to_clinicFragment"
+            app:destination="@id/clinicFragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
@@ -64,8 +64,8 @@
         android:name="com.example.ui.presentations.fragments.BaanFragment"
         android:label="BaanFragment">
         <action
-            android:id="@+id/action_baanFragment_to_firstFragment"
-            app:destination="@id/firstFragment"
+            android:id="@+id/action_baanFragment_to_clinicFragment"
+            app:destination="@id/clinicFragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
@@ -77,8 +77,8 @@
         android:label="fragment_education"
         tools:layout="@layout/fragment_education">
         <action
-            android:id="@+id/action_educationFragment_to_firstFragment"
-            app:destination="@id/firstFragment"
+            android:id="@+id/action_educationFragment_to_clinicFragment"
+            app:destination="@id/clinicFragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
@@ -90,8 +90,8 @@
         android:label="fragment_calendar"
         tools:layout="@layout/fragment_calendar">
         <action
-            android:id="@+id/action_calendarFragment_to_firstFragment"
-            app:destination="@id/firstFragment"
+            android:id="@+id/action_calendarFragment_to_clinicFragment"
+            app:destination="@id/clinicFragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
@@ -103,8 +103,8 @@
         android:label="fragment_home"
         tools:layout="@layout/fragment_home">
         <action
-            android:id="@+id/action_homeFragment_to_firstFragment"
-            app:destination="@id/firstFragment"
+            android:id="@+id/action_homeFragment_to_clinicFragment"
+            app:destination="@id/clinicFragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"

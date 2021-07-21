@@ -1,4 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" />
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="baseFragment"
+            type="com.example.ui.presentations.base.BaseFragment" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clBaseFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ivBackBaseToolbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_20dp"
+            android:layout_marginTop="@dimen/margin_20dp"
+            android:layout_marginEnd="@dimen/margin_60dp"
+            android:clickable="true"
+            android:contentDescription="@string/icon_go_to_back"
+            android:focusable="true"
+            android:onClick="@{() -> baseFragment.onBackClick()}"
+            android:src="@drawable/ic_left_arrow"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvMedicalRecords"
+            style="@style/styleNameTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_20dp"
+            android:gravity="center"
+            android:text="@string/medical_records"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/ivCancelSettingsToolbar"
+            app:layout_constraintStart_toEndOf="@+id/ivBackBaseToolbar"
+            app:layout_constraintTop_toTopOf="@id/clBaseFragment" />
+
+        <ImageView
+            android:id="@+id/ivCancelSettingsToolbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_60dp"
+            android:layout_marginTop="@dimen/margin_25dp"
+            android:layout_marginEnd="@dimen/margin_20dp"
+            android:clickable="true"
+            android:contentDescription="@string/icon_cancel"
+            android:focusable="true"
+            android:onClick="@{() -> baseFragment.onCancelClick()}"
+            android:src="@drawable/ic_cancel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

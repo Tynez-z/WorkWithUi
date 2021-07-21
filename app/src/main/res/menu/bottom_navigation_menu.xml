@@ -4,24 +4,20 @@
         android:id="@+id/homeFragment"
         android:icon="@drawable/ic_home"
         android:title="@string/home" />
-
     <item
         android:id="@+id/calendarFragment"
         android:icon="@drawable/ic_calendar_for_bottom"
         android:title="@string/calendar" />
-
     <item
         android:id="@+id/educationFragment"
         android:icon="@drawable/ic_book"
         android:title="@string/education" />
-
     <item
         android:id="@+id/baanFragment"
         android:icon="@drawable/ic_information"
         android:title="@string/baan_info" />
-
     <item
-        android:id="@+id/firstFragment"
+        android:id="@+id/clinicFragment"
         android:icon="@drawable/ic_user"
         android:title="@string/profile" />
 </menu>

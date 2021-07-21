@@ -1,4 +1,4 @@
-package com.example.ui  //TODO replace package
+package com.example.ui.utill
 
 //For adapter
 const val CT_SCAN = "CT Scan"
@@ -23,5 +23,5 @@ const val M_LINE_HEIGHT: Int = 2
 const val M_TEXT_SIZE: Int = 13
 
 //buttons
-const val BUTTON_BLUE = "Blue"
-const val BUTTON_GREY = "Grey"
+const val BUTTON_BLUE = "Blue color"
+const val BUTTON_GREY = "Grey color"

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- TODO rename cl - Are you mister Mask?  what is crazy name? why? -->
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/cl"
+    android:id="@+id/clChildList"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/tvTitleChild"
+        android:id="@+id/tvTitleChildList"
         style="@style/tvStyleChildList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -18,36 +18,36 @@
         android:paddingStart="@dimen/padding_35dp"
         android:paddingEnd="@dimen/padding_35dp"
         tools:text="@string/example_for_child"
-        app:layout_constraintTop_toTopOf="@id/cl" />
+        app:layout_constraintTop_toTopOf="@id/clChildList" />
 
     <ImageView
-        android:id="@+id/ivFile"
-        android:layout_width="@dimen/size_18dp"
-        android:layout_height="@dimen/size_18dp"
+        android:id="@+id/ivFileChildList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_10dp"
         android:layout_marginTop="@dimen/margin_5dp"
         android:background="@drawable/design_shape_group"
         android:src="@drawable/ic_file"
-        app:layout_constraintStart_toStartOf="@id/tvTitleChild"
-        app:layout_constraintTop_toTopOf="@id/cl"
+        app:layout_constraintStart_toStartOf="@id/tvTitleChildList"
+        app:layout_constraintTop_toTopOf="@id/clChildList"
         android:contentDescription="@string/icon_file" />
 
     <ImageView
-        android:id="@+id/ivDelete"
-        android:layout_width="@dimen/size_18dp"
-        android:layout_height="@dimen/size_18dp"
+        android:id="@+id/ivDeleteChildList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_5dp"
         android:src="@drawable/ic_trash"
-        app:layout_constraintEnd_toEndOf="@id/tvTitleChild"
+        app:layout_constraintEnd_toEndOf="@id/tvTitleChildList"
         app:layout_constraintTop_toTopOf="parent"
         android:contentDescription="@string/icon_trash" />
 
     <View
-        android:id="@+id/vSpace"
+        android:id="@+id/vSpaceChildList"
         android:layout_width="match_parent"
         android:layout_height="@dimen/size_8dp"
         android:background="@android:color/transparent"
-        app:layout_constraintTop_toBottomOf="@id/tvTitleChild" />
+        app:layout_constraintTop_toBottomOf="@id/tvTitleChildList" />
 
     <View
         android:layout_width="match_parent"
@@ -59,5 +59,5 @@
         android:background="@drawable/shape_divider_item_list"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/vSpace" />
+        app:layout_constraintTop_toBottomOf="@id/vSpaceChildList" />
 </androidx.constraintlayout.widget.ConstraintLayout>

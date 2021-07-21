@@ -18,6 +18,5 @@
     <color name="number_none_selected">#acb4be</color>
     <color name="current">#f29861</color>
     <color name="unreached">#dbcecece</color>
-
     <color name="invisible">#00000000</color>
 </resources>

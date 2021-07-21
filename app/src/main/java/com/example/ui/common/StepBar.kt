@@ -9,7 +9,11 @@ import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
 import com.example.ui.*
+import com.example.ui.utill.*
 
+/**
+ * This custom view - stepBar, which display steps in the different states.
+ */
 class StepBar : LinearLayout {
 
     companion object {
@@ -27,30 +31,43 @@ class StepBar : LinearLayout {
         const val TEXT_SIZE: Int = 13
     }
 
-    //TODO use documentation in view /** **/
     /**
-     * для чего используюется - все на английском языке
-     *
-     * описываешь все константы mCurrentBackground - текущий фон круга ...
-     * и удалить остальные
+     * Use some constants for show state progress:
+     * mCurrentBackground - current circle background color
+     * mPassedBackground - passed circle background color
+     * mNormalBackground - normal circle background color
+     * mSpaceBetween - interval
+     * mNormalWidth - normal width circle
+     * mCurrentWidth - current width circle
+     * mCurrentStep - current step
+     * mStepCount - number of steps
+     * mLineWidth - width of line
+     * mLineHeight - height of line
+     * isShow - visible/invisible line
+     * currentTextColor - color of text when step is current
+     * passTextColor - color of text when step is passed
+     * normalTextColor - color of text in normal state step
+     * lineColor - color of line
+     * textSize - size of text
+     * contentText - set the text content
      */
-    private var mCurrentBackground: Int = R.drawable.shape_current //текущий фон круга
-    private var mPassedBackground: Int = R.drawable.shape_normal //фон пройденного круга
-    private var mNormalBackground: Int = R.drawable.shape_failed //фон обычный
-    private var mSpaceBetween = SPACE_BETWEEN //интвервал
-    private var mNormalWidth = NORMAL_WIDTH //ширина обычная
-    private var mCurrentWidth = CURRENT_WIDTH //ширина текущего
-    private var mCurrentStep = CURRENT_STEP //по дефолту текущий шаг
-    private var mStepCount = STEP_COUNT //по дефолту количеству кругов
-    private var mLineWidth = LINE_WIDTH //по дефолту интервал линии (длина)
-    private var mLineHeight = LINE_HEIGHT //по дефолту интервал линии (высота)
-    private var isShow: Boolean = true //по дефолту показывать разделитель
-    private var currentTextColor = CURRENT_TEXT_COLOR //цвет текущего круга
-    private var passTextColor = PASS_TEXT_COLOR //цвет пройденного круга
-    private var normalTextColor = NORMAL_TEXT_COLOR //цвет в обычном состоянии
-    private var lineColor = LINE_COLOR //цвет линии
-    private var textSize = TEXT_SIZE //размер текста
-    private var contentText = emptyArray<String>() //указать текст
+    private var mCurrentBackground: Int = R.drawable.shape_current
+    private var mPassedBackground: Int = R.drawable.shape_normal
+    private var mNormalBackground: Int = R.drawable.shape_failed
+    private var mSpaceBetween = SPACE_BETWEEN
+    private var mNormalWidth = NORMAL_WIDTH
+    private var mCurrentWidth = CURRENT_WIDTH
+    private var mCurrentStep = CURRENT_STEP
+    private var mStepCount = STEP_COUNT
+    private var mLineWidth = LINE_WIDTH
+    private var mLineHeight = LINE_HEIGHT
+    private var isShow: Boolean = true
+    private var currentTextColor = CURRENT_TEXT_COLOR
+    private var passTextColor = PASS_TEXT_COLOR
+    private var normalTextColor = NORMAL_TEXT_COLOR
+    private var lineColor = LINE_COLOR
+    private var textSize = TEXT_SIZE
+    private var contentText = emptyArray<String>()
 
     private var lineView: View? = null
     private var tvCurrentStep: TextView? = null
@@ -61,10 +78,12 @@ class StepBar : LinearLayout {
 
     private fun convert(dp: Float): Int {
         return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, resources.displayMetrics)
-            .toInt()
+                .toInt()
     }
 
-    //создание //TODO use documentation
+    /**
+     * init create components
+     */
     fun init() {
         orientation = HORIZONTAL
         gravity = Gravity.CENTER_VERTICAL
@@ -116,7 +135,9 @@ class StepBar : LinearLayout {
         }
     }
 
-    //для вызова в активити/фрагмент  //TODO use documentation
+    /**
+     * get data from builder
+     */
     fun setData(barBuilder: BarBuilder) {
         mCurrentBackground = barBuilder.mCurrentBackground
         mPassedBackground = barBuilder.mPassedBackground
@@ -137,27 +158,31 @@ class StepBar : LinearLayout {
         contentText = barBuilder.contentText
     }
 
-    //для билдера //TODO use documentation
+    /**
+     * use BarBuilder in your activity/fragment and set your own parameters
+     */
     inner class BarBuilder {
-        var mCurrentBackground: Int = R.drawable.shape_current //текущий
-        var mPassedBackground: Int = R.drawable.ic_check_mark //пройденное
-        var mNormalBackground: Int = R.drawable.shape_normal //обычное состояние
-        var mSpaceBetween = M_SPACE_BETWEEN //интвервал
-        var mNormalWidth = M_NORMAL_WIDTH //длина обычного
-        var mCurrentWidth = M_CURRENT_WIDTH //длина текущего
-        var mCurrentStep = M_CURRENT_STEP //текущий
-        var mStepCount = M_STEP_COUNT //количество кругов
-        var mLineWidth = M_LINE_WIDTH //длина линии
-        var mLineHeight = M_LINE_HEIGHT //высота линии
-        var isShow: Boolean = true //видимость разделителя
-        var lineColor: Int = R.color.line_progress //цвет линии
-        var currentTextColor: Int = R.color.current //цвет текста текущего
-        var passTextColor: Int = R.color.background_color //цвет текста пройденного
-        var normalTextColor: Int = R.color.text_grey //цвет текста обычного
-        var textSize: Int = M_TEXT_SIZE //размер текста
-        var contentText = emptyArray<String>() //установить текст
+        var mCurrentBackground: Int = R.drawable.shape_current
+        var mPassedBackground: Int = R.drawable.ic_check_mark
+        var mNormalBackground: Int = R.drawable.shape_normal
+        var mSpaceBetween = M_SPACE_BETWEEN
+        var mNormalWidth = M_NORMAL_WIDTH
+        var mCurrentWidth = M_CURRENT_WIDTH
+        var mCurrentStep = M_CURRENT_STEP
+        var mStepCount = M_STEP_COUNT
+        var mLineWidth = M_LINE_WIDTH
+        var mLineHeight = M_LINE_HEIGHT
+        var isShow: Boolean = true
+        var lineColor: Int = R.color.line_progress
+        var currentTextColor: Int = R.color.current
+        var passTextColor: Int = R.color.background_color
+        var normalTextColor: Int = R.color.text_grey
+        var textSize: Int = M_TEXT_SIZE
+        var contentText = emptyArray<String>()
 
-        //установка количества шагов //TODO use documentation
+        /**
+         *  count of step
+         */
         fun setUp(stepCount: Int, currentStep: Int): BarBuilder {
             mStepCount = stepCount
             if (currentStep > 0)
@@ -165,20 +190,26 @@ class StepBar : LinearLayout {
             return this
         }
 
-        //установка длины разделителя //TODO use documentation
+        /**
+         * width of line
+         */
         fun setLineWidth(width: Int, height: Int): BarBuilder {
             mLineWidth = width
             mLineHeight = height
             return this
         }
 
-        //установка текста //TODO use documentation
+        /**
+         * set size of text
+         */
         fun setTextSize(size: Int): BarBuilder {
             textSize = size
             return this
         }
 
-        //установка цвета фона кругов //TODO use documentation
+        /**
+         * set background color of circle in different state
+         */
         fun setBackground(currentBg: Int, passedBg: Int, normalBg: Int): BarBuilder {
             mCurrentBackground = currentBg
             mPassedBackground = passedBg
@@ -186,26 +217,34 @@ class StepBar : LinearLayout {
             return this
         }
 
-        //установка размера кругов //TODO use documentation
+        /**
+         * set width of circle
+         */
         fun setCircleWidth(currentWidth: Int, normalWidth: Int): BarBuilder {
             mCurrentWidth = currentWidth //длина текущего
             mNormalWidth = normalWidth //длина обычная
             return this
         }
 
-        //установка видимости разделителя //TODO use documentation
+        /**
+         * set visible/invisible line
+         */
         fun isShowLine(show: Boolean): BarBuilder {
             isShow = show
             return this
         }
 
-        //установка цвета линии //TODO use documentation
+        /**
+         * set color of line
+         */
         fun setLineColor(color: Int): BarBuilder {
             lineColor = color
             return this
         }
 
-        //установка текста //TODO use documentation
+        /**
+         * set text content for step
+         */
         fun setContent(content: Array<String>): BarBuilder {
             if (content.size != mStepCount)
                 return this
@@ -214,13 +253,17 @@ class StepBar : LinearLayout {
             return this
         }
 
-        //установка свободного места между кругами //TODO use documentation
+        /**
+         * set the space between circle
+         */
         fun setSpace(space: Int): BarBuilder {
             mSpaceBetween = space
             return this
         }
 
-        //установка цвета текста //TODO use documentation
+        /**
+         * set color of text
+         */
         fun setTextColor(currentColor: Int, passColor: Int, normalColor: Int): BarBuilder {
             currentTextColor = currentColor
             passTextColor = passColor

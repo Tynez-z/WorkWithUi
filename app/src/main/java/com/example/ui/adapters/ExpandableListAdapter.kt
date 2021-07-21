@@ -6,8 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseExpandableListAdapter
 import com.example.ui.R
-import kotlinx.android.synthetic.main.layout_child.view.*
-import kotlinx.android.synthetic.main.layout_group.view.*
+import kotlinx.android.synthetic.main.expandable_list_child.view.*
+import kotlinx.android.synthetic.main.expandable_list_group.view.*
 
 class ExpandableListAdapter(
         private var context: Context,
@@ -21,8 +21,7 @@ class ExpandableListAdapter(
 
     override fun getGroup(groupPosition: Int) = header[groupPosition]
 
-    override fun getChild(groupPosition: Int, childPosition: Int) =
-            body[header[groupPosition]]!![childPosition]
+    override fun getChild(groupPosition: Int, childPosition: Int) = body[header[groupPosition]]!![childPosition]
 
     override fun getGroupId(groupPosition: Int) = groupPosition.toLong()
 
@@ -42,10 +41,9 @@ class ExpandableListAdapter(
 
         if (mConvertView == null) {
             val inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-            mConvertView = inflater.inflate(R.layout.layout_group, null)
+            mConvertView = inflater.inflate(R.layout.expandable_list_group, null)
         }
-
-        mConvertView!!.tvTitleGroup.text = headerTitle
+        mConvertView!!.tvTitleGroupList.text = headerTitle
         return mConvertView
     }
 
@@ -59,10 +57,9 @@ class ExpandableListAdapter(
         val bodyTitle = getChild(groupPosition, childPosition)
         if (mConvertView == null) {
             val inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-            mConvertView = inflater.inflate(R.layout.layout_child, null)
+            mConvertView = inflater.inflate(R.layout.expandable_list_child, null)
         }
-
-        mConvertView!!.tvTitleChild.text = bodyTitle
+        mConvertView!!.tvTitleChildList.text = bodyTitle
         return mConvertView
     }
 

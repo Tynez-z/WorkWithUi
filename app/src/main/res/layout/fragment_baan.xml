@@ -2,21 +2,29 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="baanFragment"
+            type="com.example.ui.presentations.fragments.BaanFragment" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <include
-            android:id="@+id/tbBase"
-            layout="@layout/toolbar_base"
+            android:id="@+id/toolbarBaanFragment"
+            layout="@layout/fragment_base"
+            app:baseFragment="@{baanFragment}"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            style="@style/tvStyleEmpty"
+            style="@style/tvStyleMenuFragment"
             android:text="@string/baan_info_text"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tbBase" />
+            app:layout_constraintTop_toBottomOf="@id/toolbarBaanFragment" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

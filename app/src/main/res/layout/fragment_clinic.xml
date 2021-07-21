@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="clinicFragment"
+            type="com.example.ui.presentations.fragments.ClinicFragment" />
+    </data>
+
+    <ScrollView
+        android:id="@+id/svClinic"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_color"
+        android:overScrollMode="never">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clClinic"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_0dp">
+
+            <include
+                android:id="@+id/toolbarProfile"
+                layout="@layout/toolbar_profile"
+                app:baseFragment="@{clinicFragment}"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <include
+                android:id="@+id/cardProfile"
+                layout="@layout/profile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/toolbarProfile" />
+
+            <GridLayout
+                android:id="@+id/glClinic"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/margin_5dp"
+                android:alignmentMode="alignMargins"
+                android:columnCount="2"
+                android:columnOrderPreserved="false"
+                android:padding="@dimen/padding_14dp"
+                android:rowCount="4"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardProfile">
+
+                <androidx.cardview.widget.CardView
+                    style="@style/cvStyleLeft"
+                    android:layout_row="0">
+
+                    <ImageView
+                        android:id="@+id/ivHealthRecords"
+                        style="@style/ivClinicSize"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/icon_health_records"
+                        android:src="@drawable/ic_medical_report" />
+
+                    <TextView
+                        style="@style/tvStyleIv"
+                        android:text="@string/my_health_records" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    style="@style/cvStyleRight"
+                    android:layout_row="0">
+
+                    <ImageView
+                        android:id="@+id/ivCalendar"
+                        style="@style/ivClinicSize"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/icon_calendar"
+                        android:src="@drawable/ic_calendar" />
+
+                    <TextView
+                        style="@style/tvStyleIv"
+                        android:text="@string/my_appointments" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    style="@style/cvStyleRight"
+                    android:layout_row="1">
+
+                    <ImageView
+                        android:id="@+id/ivMedicalTeam"
+                        style="@style/ivClinicSize"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/icon_medical_team"
+                        android:src="@drawable/ic_volunteering" />
+
+                    <TextView
+                        style="@style/tvStyleIv"
+                        android:text="@string/my_medical_team" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    style="@style/cvStyleRight"
+                    android:layout_row="2">
+
+                    <ImageView
+                        android:id="@+id/ivMessage"
+                        style="@style/ivClinicSize"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/icon_message"
+                        android:src="@drawable/ic_chat" />
+
+                    <TextView
+                        style="@style/tvStyleIv"
+                        android:text="@string/messages" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    style="@style/cvStyleLeft"
+                    android:layout_row="1">
+
+                        <ImageView
+                            android:id="@+id/ivMedications"
+                            style="@style/ivClinicSize"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="@string/icon_medications"
+                            android:src="@drawable/ic_pill" />
+
+                        <TextView
+                            style="@style/tvStyleIv"
+                            android:text="@string/my_medications" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    style="@style/cvStyleLeft"
+                    android:layout_row="2">
+
+                        <ImageView
+                            android:id="@+id/ivTestResult"
+                            style="@style/ivClinicSize"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="@string/icon_test_result"
+                            android:src="@drawable/ic_test" />
+
+                        <TextView
+                            style="@style/tvStyleIv"
+                            android:text="@string/test_results" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    style="@style/cvStyleLeft"
+                    android:layout_row="3">
+
+                        <ImageView
+                            android:id="@+id/ivDocuments"
+                            style="@style/ivClinicSize"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_folder"
+                            android:contentDescription="@string/icon_documents" />
+
+                        <TextView
+                            style="@style/tvStyleIv"
+                            android:text="@string/documents_folder" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    style="@style/cvStyleRight"
+                    android:layout_row="3">
+
+                        <ImageView
+                            android:id="@+id/ivBilling"
+                            style="@style/ivClinicSize"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="@string/icon_billing"
+                            android:src="@drawable/ic_bill" />
+
+                        <TextView
+                            style="@style/tvStyleIv"
+                            android:text="@string/billing" />
+                </androidx.cardview.widget.CardView>
+                </GridLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+</layout>

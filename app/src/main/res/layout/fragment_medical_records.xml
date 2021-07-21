@@ -1,26 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- TODO rename!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-        <import type="com.example.ui.ConstantsKt" />
-
+        <import type="com.example.ui.utill.ConstantsKt" />
         <variable
-            name="isClick"
+            name="medicalRecordsFragment"
+            type="com.example.ui.presentations.fragments.MedicalRecordsFragment" />
+        <variable
+            name="isClickNo"
+            type="Boolean" />
+        <variable
+            name="isClickYes"
             type="Boolean" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/clSecondFragment"
+        android:id="@+id/clMedicalRecordsFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/background_color">
 
         <include
-            android:id="@id/tbSecondFragment"
-            layout="@layout/toolbar_settings"
-            app:layout_constraintTop_toTopOf="@id/clSecondFragment" />
+            android:id="@id/toolbarMedicalRecords"
+            layout="@layout/fragment_base"
+            app:baseFragment="@{medicalRecordsFragment}"
+            app:layout_constraintTop_toTopOf="@id/clMedicalRecordsFragment" />
 
         <com.example.ui.common.StepBar
             android:id="@+id/stepBar"
@@ -29,10 +34,10 @@
             android:layout_marginTop="@dimen/margin_20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tbSecondFragment" />
+            app:layout_constraintTop_toBottomOf="@+id/toolbarMedicalRecords" />
 
         <TextView
-            android:id="@+id/tvQuestion"
+            android:id="@+id/tvQuestionMedicalRecords"
             style="@style/boldStyleTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -43,39 +48,39 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/stepBar" />
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnNo"
-                android:text="@string/no"
-                android:textAllCaps="false"
-                android:layout_width="wrap_content"
-                android:layout_marginTop="@dimen/margin_8dp"
-                android:layout_height="@dimen/size_43dp"
-                app:layout_constraintStart_toStartOf="@+id/tvQuestion"
-                app:layout_constraintTop_toBottomOf="@id/tvQuestion"
-                app:question_no_button="@{isClick ? ConstantsKt.BUTTON_BLUE : ConstantsKt.BUTTON_GREY}" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnNoMedicalRecords"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/size_43dp"
+            android:layout_marginTop="@dimen/margin_8dp"
+            android:text="@string/no"
+            android:textAllCaps="false"
+            app:layout_constraintStart_toStartOf="@+id/tvQuestionMedicalRecords"
+            app:layout_constraintTop_toBottomOf="@id/tvQuestionMedicalRecords"
+            app:set_state_btn_no="@{isClickNo ? ConstantsKt.BUTTON_GREY : ConstantsKt.BUTTON_BLUE}" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnYes"
+            android:id="@+id/btnYesMedicalRecords"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/size_43dp"
             android:layout_marginTop="@dimen/margin_8dp"
             android:layout_marginStart="@dimen/margin_8dp"
             android:text="@string/yes"
             android:textAllCaps="false"
-            app:layout_constraintStart_toEndOf="@+id/btnNo"
-            app:layout_constraintTop_toBottomOf="@id/tvQuestion"
-            app:question_no_button="@{isClick ? ConstantsKt.BUTTON_GREY : ConstantsKt.BUTTON_BLUE}" />
+            app:layout_constraintStart_toEndOf="@+id/btnNoMedicalRecords"
+            app:layout_constraintTop_toBottomOf="@id/tvQuestionMedicalRecords"
+            app:set_state_btn_yes="@{isClickYes ? ConstantsKt.BUTTON_GREY : ConstantsKt.BUTTON_BLUE}" />
 
         <TextView
-            android:id="@+id/tvUpload"
+            android:id="@+id/tvUploadMedicalRecords"
             style="@style/styleTextUpload"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_20dp"
             android:visibility="invisible"
             android:text="@string/please_upload"
-            app:layout_constraintStart_toStartOf="@+id/btnNo"
-            app:layout_constraintTop_toBottomOf="@+id/btnNo" />
+            app:layout_constraintStart_toStartOf="@+id/btnNoMedicalRecords"
+            app:layout_constraintTop_toBottomOf="@+id/btnNoMedicalRecords" />
 
         <ExpandableListView
             android:id="@+id/expListView"
@@ -89,13 +94,13 @@
             android:overScrollMode="never"
             android:scrollbars="none"
             android:visibility="invisible"
-            app:layout_constraintBottom_toTopOf="@id/btnNext"
+            app:layout_constraintBottom_toTopOf="@id/btnNextMedicalRecords"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvUpload" />
+            app:layout_constraintTop_toBottomOf="@id/tvUploadMedicalRecords" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnNext"
+            android:id="@+id/btnNextMedicalRecords"
             style="@style/styleButtonNext"
             android:layout_width="match_parent"
             android:layout_height="@dimen/size_43dp"

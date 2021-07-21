@@ -1,51 +1,43 @@
 package com.example.ui.presentations.fragments
 
-import android.content.Intent
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
-import com.example.ui.*
+import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
+import com.example.ui.BR
+import com.example.ui.R
 import com.example.ui.adapters.ExpandableListAdapter
-import com.example.ui.databinding.FragmentSecondBinding
-import com.example.ui.presentations.activities.MainActivity
+import com.example.ui.databinding.FragmentMedicalRecordsBinding
 import com.example.ui.presentations.base.BaseFragment
-import kotlinx.android.synthetic.main.fragment_second.*
-import kotlinx.android.synthetic.main.toolbar_settings.*
+import com.example.ui.utill.*
+import kotlinx.android.synthetic.main.fragment_medical_records.*
 
-//TODO rename this fragment
-class SecondFragment : BaseFragment<FragmentSecondBinding>() {
+class MedicalRecordsFragment : BaseFragment() {
 
-    override val layoutId: Int = R.layout.fragment_second
-    override var bottomNavigationViewVisibility = View.GONE
+    override val layoutId: Int = R.layout.fragment_medical_records
 
     private lateinit var header: List<String>
     private lateinit var body: HashMap<String, List<String>>
+    private lateinit var medicalRecordsBinding: FragmentMedicalRecordsBinding
+
+    override fun onCreateView(
+            inflater: LayoutInflater,
+            container: ViewGroup?,
+            savedInstanceState: Bundle?
+    ): View {
+        medicalRecordsBinding = DataBindingUtil.inflate(inflater, layoutId, container, false)
+        medicalRecordsBinding.setVariable(BR.medicalRecordsFragment, this)
+        return medicalRecordsBinding.root
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        //TODO use single fun in this fragment
-        stepBar.BarBuilder()
-            .build()
-            .init()
         showList()
-
+        setCustomView()
         val listViewAdapter = ExpandableListAdapter(requireContext(), header, body)
         expListView.setAdapter(listViewAdapter)
-
         showExpandableList()
-
-        //TODO use single fun with binding!!
-        getViewDataBinding().apply {
-            ivBackBaseTb.setOnClickListener {
-                getNavController().navigate(R.id.action_secondFragment_to_firstFragment)
-            }
-        }
-
-        ivCancelSettingsTb.setOnClickListener {
-            val intent = Intent(requireContext(), MainActivity::class.java)
-            startActivity(intent)
-            requireActivity().finish()
-        }
     }
 
     //use custom data in this fun - mapping data
@@ -80,18 +72,25 @@ class SecondFragment : BaseFragment<FragmentSecondBinding>() {
         body[header[8]] = bodyEmpty
     }
 
-    private fun showExpandableList () {
-        getViewDataBinding().apply {
-            btnYes.setOnClickListener {
-                expListView.makeVisible()
-                tvUpload.makeVisible()
-                isClick = true
-            }
+    private fun setCustomView() {
+        stepBar.BarBuilder()
+                .build()
+                .init()
+    }
 
-            btnNo.setOnClickListener {
+    private fun showExpandableList() {
+        medicalRecordsBinding.apply {
+            btnYesMedicalRecords.setOnClickListener {
+                expListView.makeVisible()
+                tvUploadMedicalRecords.makeVisible()
+                isClickYes = true
+                isClickNo = false
+            }
+            btnNoMedicalRecords.setOnClickListener {
                 expListView.makeInvisible()
-                tvUpload.makeInvisible()
-                isClick = false
+                tvUploadMedicalRecords.makeInvisible()
+                isClickNo = true
+                isClickYes = false
             }
         }
     }

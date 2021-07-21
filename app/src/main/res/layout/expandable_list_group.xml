@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- TODO rename constraint!  constraint from what? -->
-
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/constraint"
+    android:id="@+id/clGroupList"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <TextView
-        android:id="@+id/tvTitleGroup"
+        android:id="@+id/tvTitleGroupList"
         style="@style/textGroupList"
         android:layout_width="match_parent"
         android:layout_height="@dimen/size_50dp"
@@ -20,23 +18,22 @@
         android:text="@string/example_for_group"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/constraint" />
+        app:layout_constraintTop_toTopOf="@id/clGroupList" />
 
-    <!-- TODO use universal size -->
     <ImageView
-        android:id="@+id/ivAdd"
-        android:layout_width="@dimen/size_18dp"
-        android:layout_height="@dimen/size_18dp"
+        android:id="@+id/ivAddGroupList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_20dp"
         android:src="@drawable/ic_add"
         android:layout_marginEnd="@dimen/margin_20dp"
-        app:layout_constraintEnd_toEndOf="@id/tvTitleGroup"
-        app:layout_constraintTop_toTopOf="@id/constraint"
+        app:layout_constraintEnd_toEndOf="@id/tvTitleGroupList"
+        app:layout_constraintTop_toTopOf="@id/clGroupList"
         android:contentDescription="@string/icon_add" />
 
     <View
         android:layout_width="match_parent"
-        app:layout_constraintTop_toTopOf="@id/constraint"
+        app:layout_constraintTop_toTopOf="@id/clGroupList"
         android:layout_height="@dimen/size_6dp"
         android:background="@drawable/design_shape_space_group" />
 </androidx.constraintlayout.widget.ConstraintLayout>
