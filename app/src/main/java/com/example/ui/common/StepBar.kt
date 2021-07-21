@@ -181,7 +181,7 @@ class StepBar : LinearLayout {
         var contentText = emptyArray<String>()
 
         /**
-         *  count of step
+         * set count of step
          */
         fun setUp(stepCount: Int, currentStep: Int): BarBuilder {
             mStepCount = stepCount
@@ -191,7 +191,7 @@ class StepBar : LinearLayout {
         }
 
         /**
-         * width of line
+         * set width of line
          */
         fun setLineWidth(width: Int, height: Int): BarBuilder {
             mLineWidth = width
