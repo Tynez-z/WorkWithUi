@@ -15,7 +15,6 @@ import com.example.ui.presentations.activities.SingleActivity
 import com.example.ui.utill.makeGone
 import com.example.ui.utill.makeVisible
 import kotlinx.android.synthetic.main.fragment_base.*
-import kotlinx.android.synthetic.main.toolbar_profile.*
 
 abstract class BaseFragment : Fragment() {
 
@@ -23,8 +22,7 @@ abstract class BaseFragment : Fragment() {
     private lateinit var navController: NavController
     private lateinit var baseBinding: FragmentBaseBinding
 
-    override fun onCreateView(
-            inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         baseBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_base, container, false)
         return baseBinding.root
     }
@@ -53,22 +51,16 @@ abstract class BaseFragment : Fragment() {
     }
 
     open fun onBackClick() {
-        ivBackBaseToolbar.setOnClickListener {
-            getNavController().navigateUp()
-        }
+       getNavController().navigateUp()
     }
 
     open fun onCancelClick() {
-        ivCancelSettingsToolbar.setOnClickListener {
-            val intent = Intent(requireContext(), SingleActivity::class.java)
-            startActivity(intent)
-            requireActivity().finish()
-        }
+        val intent = Intent(requireContext(), SingleActivity::class.java)
+        startActivity(intent)
+        requireActivity().finish()
     }
 
     open fun onClickSettings() {
-        ivSettingsToolbar.setOnClickListener {
-            getNavController().navigate(R.id.action_clinicFragment_to_medicalRecordsFragment)
-        }
+        getNavController().navigate(R.id.action_clinicFragment_to_medicalRecordsFragment)
     }
 }

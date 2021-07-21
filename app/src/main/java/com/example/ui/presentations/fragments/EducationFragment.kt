@@ -13,11 +13,10 @@ import com.example.ui.presentations.base.BaseFragment
 class EducationFragment : BaseFragment() {
 
     override val layoutId: Int = R.layout.fragment_education
-    private lateinit var fragmentEducationBinding: FragmentEducationBinding
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        fragmentEducationBinding = DataBindingUtil.inflate(inflater, layoutId, container, false)
+        val fragmentEducationBinding: FragmentEducationBinding = DataBindingUtil.inflate(inflater, layoutId, container, false)
         fragmentEducationBinding.setVariable(BR.educationFragment, this)
         return fragmentEducationBinding.root
     }
