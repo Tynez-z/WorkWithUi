@@ -89,7 +89,7 @@ class StepBar : LinearLayout {
         gravity = Gravity.CENTER_VERTICAL
         for (item in 0 until mStepCount) {
             tvCurrentStep = TextView(context)
-            if (item < mStepCount - 1 && isShow) {//интервал
+            if (item < mStepCount - 1 && isShow) {//интервал //TODO delete russian comment
                 lineView = View(context)
                 lineView!!.setBackgroundResource(lineColor)
                 val params = LayoutParams(convert(mLineWidth.toFloat()), convert(mLineHeight.toFloat()))
@@ -158,6 +158,7 @@ class StepBar : LinearLayout {
         contentText = barBuilder.contentText
     }
 
+    //TODO make single class (single responsibility)
     /**
      * use BarBuilder in your activity/fragment and set your own parameters
      */

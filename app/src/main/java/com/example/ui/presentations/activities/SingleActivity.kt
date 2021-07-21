@@ -14,33 +14,28 @@ import kotlinx.android.synthetic.main.fragment_base.*
 class SingleActivity : AppCompatActivity() {
 
     private lateinit var singleActivityBinding: ActivitySingleBinding
+    private lateinit var navHostFragment: NavHostFragment
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         singleActivityBinding = DataBindingUtil.setContentView(this@SingleActivity, R.layout.activity_single)
+        navHostFragment = supportFragmentManager.findFragmentById(R.id.navHostFragment) as NavHostFragment
 
-        val navHostFragment = supportFragmentManager.findFragmentById(R.id.navHostFragment) as NavHostFragment
-        val navController = navHostFragment.navController
-        singleActivityBinding.bottomNavigationView.setupWithNavController(navController)
+        workWithBottomNavigation()
+    }
 
-        navController.addOnDestinationChangedListener { _, destination, _ ->
+    private fun workWithBottomNavigation(){
+        singleActivityBinding.bottomNavigationView.setupWithNavController(navHostFragment.navController)
+        navHostFragment.navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
                 R.id.medicalRecordsFragment -> {
-                    hideBottomNavMenu()
+                    singleActivityBinding.bottomNavigationView.makeGone()
                 }
                 else -> {
-                    showBottomNavMenu()
+                    singleActivityBinding.bottomNavigationView.makeVisible()
                 }
             }
         }
-    }
-
-    private fun hideBottomNavMenu() {
-        singleActivityBinding.bottomNavigationView.makeGone()
-    }
-
-    private fun showBottomNavMenu() {
-        singleActivityBinding.bottomNavigationView.makeVisible()
     }
 }
