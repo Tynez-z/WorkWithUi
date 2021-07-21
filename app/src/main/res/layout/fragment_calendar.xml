@@ -19,6 +19,7 @@
             app:baseFragment="@{calendarFragment}"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <!-- TODO rename (why is style?) -->
         <TextView
             style="@style/tvStyleMenuFragment"
             android:text="@string/calendar_text"

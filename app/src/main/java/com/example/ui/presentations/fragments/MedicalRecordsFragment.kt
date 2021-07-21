@@ -13,6 +13,7 @@ import com.example.ui.presentations.base.BaseFragment
 import com.example.ui.utill.*
 import kotlinx.android.synthetic.main.fragment_medical_records.*
 
+//TODO work with layoutId and binding
 class MedicalRecordsFragment : BaseFragment() {
 
     override val layoutId: Int = R.layout.fragment_medical_records
@@ -35,12 +36,16 @@ class MedicalRecordsFragment : BaseFragment() {
         super.onViewCreated(view, savedInstanceState)
         showList()
         setCustomView()
+
+        //TODO use single fun for init adapter
         val listViewAdapter = ExpandableListAdapter(requireContext(), header, body)
         expListView.setAdapter(listViewAdapter)
-        showExpandableList()
+
+        showExpandableList() //TODO remove
     }
 
     //use custom data in this fun - mapping data
+    //TODO rename (initData...)
     private fun showList() {
         header = ArrayList()
         body = HashMap()
@@ -78,20 +83,25 @@ class MedicalRecordsFragment : BaseFragment() {
                 .init()
     }
 
+    //TODO use data binding xml
     private fun showExpandableList() {
         medicalRecordsBinding.apply {
-            btnYesMedicalRecords.setOnClickListener {
-                expListView.makeVisible()
-                tvUploadMedicalRecords.makeVisible()
-                isClickYes = true
-                isClickNo = false
-            }
             btnNoMedicalRecords.setOnClickListener {
                 expListView.makeInvisible()
                 tvUploadMedicalRecords.makeInvisible()
                 isClickNo = true
                 isClickYes = false
             }
+        }
+    }
+
+    //EXAMPLE
+    fun clickOnYesButton(){
+        medicalRecordsBinding.apply {
+            expListView.makeVisible()
+            tvUploadMedicalRecords.makeVisible()
+            isClickYes = true
+            isClickNo = false
         }
     }
 }

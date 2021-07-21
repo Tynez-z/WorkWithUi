@@ -10,6 +10,7 @@ import com.example.ui.R
 import com.example.ui.databinding.FragmentCalendarBinding
 import com.example.ui.presentations.base.BaseFragment
 
+//TODO work with layoutId and binding
 class CalendarFragment : BaseFragment() {
 
     override val layoutId: Int = R.layout.fragment_calendar

@@ -11,14 +11,15 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent" >
 
         <include
             android:id="@+id/toolbarEducationFragment"
             layout="@layout/fragment_base"
-            app:baseFragment="@{educationFragment}"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:baseFragment="@{educationFragment}" />
 
+        <!-- TODO rename (why is style?) -->
         <TextView
             style="@style/tvStyleMenuFragment"
             android:text="@string/education_text"

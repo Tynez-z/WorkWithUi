@@ -10,6 +10,7 @@ import com.example.ui.R
 import com.example.ui.databinding.FragmentClinicBinding
 import com.example.ui.presentations.base.BaseFragment
 
+//TODO work with layoutId and binding
 class ClinicFragment : BaseFragment() {
 
     override val layoutId: Int = R.layout.fragment_clinic

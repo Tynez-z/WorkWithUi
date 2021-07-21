@@ -16,9 +16,8 @@ import com.example.ui.utill.makeGone
 import com.example.ui.utill.makeVisible
 import kotlinx.android.synthetic.main.fragment_base.*
 
-abstract class BaseFragment : Fragment() {
+abstract class BaseFragment(layoutId: Int) : Fragment(layoutId) {
 
-    abstract val layoutId: Int
     private lateinit var navController: NavController
     private lateinit var baseBinding: FragmentBaseBinding
 

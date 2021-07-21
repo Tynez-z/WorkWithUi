@@ -4,6 +4,7 @@
 
     <data>
         <import type="android.view.View" />
+
         <variable
             name="baanFragment"
             type="com.example.ui.presentations.fragments.BaanFragment" />
@@ -11,14 +12,15 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent" >
 
         <include
             android:id="@+id/toolbarBaanFragment"
             layout="@layout/fragment_base"
-            app:baseFragment="@{baanFragment}"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:baseFragment="@{baanFragment}" />
 
+        <!-- TODO rename (why is style?) -->
         <TextView
             style="@style/tvStyleMenuFragment"
             android:text="@string/baan_info_text"

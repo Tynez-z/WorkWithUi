@@ -10,6 +10,7 @@ import com.example.ui.R
 import com.example.ui.databinding.FragmentHomeBinding
 import com.example.ui.presentations.base.BaseFragment
 
+//TODO work with layoutId and binding
 class HomeFragment : BaseFragment() {
 
     override val layoutId: Int = R.layout.fragment_home

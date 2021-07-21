@@ -7,7 +7,7 @@ import androidx.core.content.ContextCompat.getColor
 import androidx.databinding.BindingAdapter
 import com.example.ui.R
 
-@BindingAdapter("set_state_btn_no")
+@BindingAdapter("set_state_btn_no") //TODO use constants
 fun Button.setVisibilityOfClick(type: String?) {
     background = when (type) {
         BUTTON_BLUE -> getDrawable(context, R.drawable.btn_normal)

@@ -8,6 +8,7 @@
             type="com.example.ui.presentations.base.BaseFragment" />
     </data>
 
+    <!-- TODO using base toolbar -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

@@ -2,6 +2,8 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <!-- TODO rename!!! this fragment to base_toolbar (or toolbar) -->
+
     <data>
         <import type="android.view.View" />
         <variable
