@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/clChildList"
@@ -17,9 +16,10 @@
         android:gravity="center_vertical"
         android:paddingStart="@dimen/padding_35dp"
         android:paddingEnd="@dimen/padding_35dp"
-        tools:text="@string/example_for_child"
-        app:layout_constraintTop_toTopOf="@id/clChildList" />
+        app:layout_constraintTop_toTopOf="@id/clChildList"
+        tools:text="@string/example_for_child" />
 
+    <!--TODO not work with wrap content using ConstraintLayout-->
     <ImageView
         android:id="@+id/ivFileChildList"
         android:layout_width="wrap_content"
@@ -27,20 +27,20 @@
         android:layout_marginStart="@dimen/margin_10dp"
         android:layout_marginTop="@dimen/margin_5dp"
         android:background="@drawable/design_shape_group"
+        android:contentDescription="@string/icon_file"
         android:src="@drawable/ic_file"
         app:layout_constraintStart_toStartOf="@id/tvTitleChildList"
-        app:layout_constraintTop_toTopOf="@id/clChildList"
-        android:contentDescription="@string/icon_file" />
+        app:layout_constraintTop_toTopOf="@id/clChildList" />
 
     <ImageView
         android:id="@+id/ivDeleteChildList"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_5dp"
+        android:contentDescription="@string/icon_trash"
         android:src="@drawable/ic_trash"
         app:layout_constraintEnd_toEndOf="@id/tvTitleChildList"
-        app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="@string/icon_trash" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <View
         android:id="@+id/vSpaceChildList"

@@ -34,6 +34,7 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toBottomOf="@id/toolbarProfile" />
 
+            <!--Chains from ConstraintLayout can be used-->
             <GridLayout
                 android:id="@+id/glClinic"
                 android:layout_width="match_parent"
@@ -49,6 +50,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/cardProfile">
 
+                <!--TODO CardView is massive element, alternatives should be used-->
                 <androidx.cardview.widget.CardView
                     style="@style/cvStyleLeft"
                     android:layout_row="0">
