@@ -23,7 +23,7 @@
 
             <include
                 android:id="@+id/toolbarProfile"
-                layout="@layout/toolbar_profile"
+                layout="@layout/fragment_base_toolbar"
                 app:baseFragment="@{clinicFragment}"
                 app:layout_constraintTop_toTopOf="parent" />
 

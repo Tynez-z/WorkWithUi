@@ -9,7 +9,6 @@ import com.example.ui.R
 import com.example.ui.databinding.ActivitySingleBinding
 import com.example.ui.utill.makeGone
 import com.example.ui.utill.makeVisible
-import kotlinx.android.synthetic.main.fragment_base.*
 
 class SingleActivity : AppCompatActivity() {
 

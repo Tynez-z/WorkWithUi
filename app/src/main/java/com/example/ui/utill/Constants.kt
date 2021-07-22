@@ -25,3 +25,7 @@ const val M_TEXT_SIZE: Int = 13
 //buttons
 const val BUTTON_BLUE = "Blue color"
 const val BUTTON_GREY = "Grey color"
+
+//extensions
+const val SET_STATE_BTN_NO = "set_state_btn_no"
+const val SET_STATE_BTN_YES = "set_state_btn_yes"

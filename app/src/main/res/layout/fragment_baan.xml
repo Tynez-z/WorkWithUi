@@ -4,7 +4,6 @@
 
     <data>
         <import type="android.view.View" />
-
         <variable
             name="baanFragment"
             type="com.example.ui.presentations.fragments.BaanFragment" />
@@ -17,12 +16,11 @@
 
         <include
             android:id="@+id/toolbarBaanFragment"
-            layout="@layout/fragment_base"
+            layout="@layout/fragment_base_toolbar"
             app:baseFragment="@{baanFragment}" />
 
-        <!-- TODO rename (why is style?) -->
         <TextView
-            style="@style/tvStyleMenuFragment"
+            style="@style/tvTitleFragment"
             android:text="@string/baan_info_text"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

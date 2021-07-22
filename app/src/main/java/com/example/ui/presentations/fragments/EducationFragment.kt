@@ -10,14 +10,10 @@ import com.example.ui.R
 import com.example.ui.databinding.FragmentEducationBinding
 import com.example.ui.presentations.base.BaseFragment
 
-//TODO work with layoutId and binding
-class EducationFragment : BaseFragment() {
+class EducationFragment : BaseFragment(R.layout.fragment_education) {
 
-    override val layoutId: Int = R.layout.fragment_education
-
-    override fun onCreateView(
-            inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        val fragmentEducationBinding: FragmentEducationBinding = DataBindingUtil.inflate(inflater, layoutId, container, false)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+        val fragmentEducationBinding: FragmentEducationBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_education, container, false)
         fragmentEducationBinding.setVariable(BR.educationFragment, this)
         return fragmentEducationBinding.root
     }

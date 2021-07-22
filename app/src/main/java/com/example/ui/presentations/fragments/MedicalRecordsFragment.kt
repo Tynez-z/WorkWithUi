@@ -13,40 +13,32 @@ import com.example.ui.presentations.base.BaseFragment
 import com.example.ui.utill.*
 import kotlinx.android.synthetic.main.fragment_medical_records.*
 
-//TODO work with layoutId and binding
-class MedicalRecordsFragment : BaseFragment() {
-
-    override val layoutId: Int = R.layout.fragment_medical_records
+class MedicalRecordsFragment : BaseFragment(R.layout.fragment_medical_records) {
 
     private lateinit var header: List<String>
     private lateinit var body: HashMap<String, List<String>>
     private lateinit var medicalRecordsBinding: FragmentMedicalRecordsBinding
 
-    override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?
-    ): View {
-        medicalRecordsBinding = DataBindingUtil.inflate(inflater, layoutId, container, false)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+        medicalRecordsBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_medical_records, container, false)
         medicalRecordsBinding.setVariable(BR.medicalRecordsFragment, this)
         return medicalRecordsBinding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        showList()
+        initDataOfAdapter()
         setCustomView()
+        initAdapter()
+    }
 
-        //TODO use single fun for init adapter
+    private fun initAdapter() {
         val listViewAdapter = ExpandableListAdapter(requireContext(), header, body)
         expListView.setAdapter(listViewAdapter)
-
-        showExpandableList() //TODO remove
     }
 
     //use custom data in this fun - mapping data
-    //TODO rename (initData...)
-    private fun showList() {
+    private fun initDataOfAdapter() {
         header = ArrayList()
         body = HashMap()
 
@@ -78,25 +70,20 @@ class MedicalRecordsFragment : BaseFragment() {
     }
 
     private fun setCustomView() {
-        stepBar.BarBuilder()
-                .build()
+        stepBar.build()
                 .init()
     }
 
-    //TODO use data binding xml
-    private fun showExpandableList() {
+    fun clickOnNoButton() {
         medicalRecordsBinding.apply {
-            btnNoMedicalRecords.setOnClickListener {
-                expListView.makeInvisible()
-                tvUploadMedicalRecords.makeInvisible()
-                isClickNo = true
-                isClickYes = false
-            }
+            expListView.makeInvisible()
+            tvUploadMedicalRecords.makeInvisible()
+            isClickNo = true
+            isClickYes = false
         }
     }
 
-    //EXAMPLE
-    fun clickOnYesButton(){
+    fun clickOnYesButton() {
         medicalRecordsBinding.apply {
             expListView.makeVisible()
             tvUploadMedicalRecords.makeVisible()

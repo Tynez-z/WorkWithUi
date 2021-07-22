@@ -10,15 +10,10 @@ import com.example.ui.R
 import com.example.ui.databinding.FragmentClinicBinding
 import com.example.ui.presentations.base.BaseFragment
 
-//TODO work with layoutId and binding
-class ClinicFragment : BaseFragment() {
+class ClinicFragment : BaseFragment(R.layout.fragment_clinic) {
 
-    override val layoutId: Int = R.layout.fragment_clinic
-    private lateinit var fragmentClinicBinding: FragmentClinicBinding
-
-    override fun onCreateView(
-            inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        fragmentClinicBinding = DataBindingUtil.inflate(inflater, layoutId, container, false)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+        val fragmentClinicBinding: FragmentClinicBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_clinic, container, false)
         fragmentClinicBinding.setVariable(BR.clinicFragment, this)
         return fragmentClinicBinding.root
     }

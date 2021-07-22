@@ -10,15 +10,10 @@ import com.example.ui.R
 import com.example.ui.databinding.FragmentHomeBinding
 import com.example.ui.presentations.base.BaseFragment
 
-//TODO work with layoutId and binding
-class HomeFragment : BaseFragment() {
+class HomeFragment : BaseFragment(R.layout.fragment_home) {
 
-    override val layoutId: Int = R.layout.fragment_home
-    private lateinit var fragmentHomeBinding: FragmentHomeBinding
-
-    override fun onCreateView(
-            inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        fragmentHomeBinding = DataBindingUtil.inflate(inflater, layoutId, container, false)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+        val fragmentHomeBinding: FragmentHomeBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false)
         fragmentHomeBinding.setVariable(BR.homeFragment, this)
         return fragmentHomeBinding.root
     }

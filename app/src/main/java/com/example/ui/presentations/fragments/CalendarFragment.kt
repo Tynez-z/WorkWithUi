@@ -10,16 +10,10 @@ import com.example.ui.R
 import com.example.ui.databinding.FragmentCalendarBinding
 import com.example.ui.presentations.base.BaseFragment
 
-//TODO work with layoutId and binding
-class CalendarFragment : BaseFragment() {
+class CalendarFragment : BaseFragment(R.layout.fragment_calendar) {
 
-    override val layoutId: Int = R.layout.fragment_calendar
-    private lateinit var fragmentCalendarBinding: FragmentCalendarBinding
-
-    override fun onCreateView(
-            inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
-    ): View {
-        fragmentCalendarBinding = DataBindingUtil.inflate(inflater, layoutId, container, false)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+        val fragmentCalendarBinding: FragmentCalendarBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_calendar, container, false)
         fragmentCalendarBinding.setVariable(BR.calendarFragment, this)
         return fragmentCalendarBinding.root
     }

@@ -16,12 +16,11 @@
 
         <include
             android:id="@+id/toolbarEducationFragment"
-            layout="@layout/fragment_base"
+            layout="@layout/fragment_base_toolbar"
             app:baseFragment="@{educationFragment}" />
 
-        <!-- TODO rename (why is style?) -->
         <TextView
-            style="@style/tvStyleMenuFragment"
+            style="@style/tvTitleFragment"
             android:text="@string/education_text"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

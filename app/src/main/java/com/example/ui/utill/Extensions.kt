@@ -7,7 +7,7 @@ import androidx.core.content.ContextCompat.getColor
 import androidx.databinding.BindingAdapter
 import com.example.ui.R
 
-@BindingAdapter("set_state_btn_no") //TODO use constants
+@BindingAdapter(SET_STATE_BTN_NO)
 fun Button.setVisibilityOfClick(type: String?) {
     background = when (type) {
         BUTTON_BLUE -> getDrawable(context, R.drawable.btn_normal)
@@ -15,15 +15,15 @@ fun Button.setVisibilityOfClick(type: String?) {
         else -> getDrawable(context, R.drawable.btn_normal)
     }
     setTextColor(
-        when (type) {
-            BUTTON_BLUE -> getColor(context, R.color.text_grey)
-            BUTTON_GREY -> getColor(context, R.color.white)
-            else -> getColor(context, R.color.text_grey)
-        }
+            when (type) {
+                BUTTON_BLUE -> getColor(context, R.color.text_grey)
+                BUTTON_GREY -> getColor(context, R.color.white)
+                else -> getColor(context, R.color.text_grey)
+            }
     )
 }
 
-@BindingAdapter("set_state_btn_yes")
+@BindingAdapter(SET_STATE_BTN_YES)
 fun Button.setVisibilityOfYesClick(type: String?) {
     background = when (type) {
         BUTTON_BLUE -> getDrawable(context, R.drawable.btn_normal)
